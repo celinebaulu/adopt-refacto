@@ -1,0 +1,198 @@
+/* Styles généraux pour le body */
+body {
+    margin: 0;
+    font-family: 'Gotham', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Style pour le bandeau */
+.bandeau {
+    background-color: #49583C;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Ne fixe pas le bandeau mais le garde en haut */
+    width: 100%;
+    z-index: 1000; /* Assure que le bandeau reste au-dessus des autres éléments */
+}
+
+/* Style pour le contenu du bandeau */
+.bandeau-message {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Style pour le header */
+header {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-top: 50px; /* Espace pour le bandeau au-dessus du header */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
+.main-nav {
+    flex: 1;
+    margin-left: 50px; /* Espace entre le logo et le menu */
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin: 0 20px; /* Espacement de 20px entre les éléments de menu */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav-menu a:hover {
+    color: #ff0000; /* Couleur de survol pour le mot "Soldes" */
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.header-icon {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Style pour la barre de recherche */
+.search-bar {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search-bar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Style pour l'image principale */
+.main-image {
+    width: 100%;
+    height: 500px; /* Hauteur fixe pour l'image principale */
+    overflow: hidden;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image couvre tout l'espace sans déformation */
+}
+
+/* Style pour la galerie d'images */
+.image-gallery {
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Centre la galerie horizontalement */
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center; /* Centre les images dans le conteneur */
+    flex-wrap: wrap; /* Permet de passer à la ligne suivante si l'espace est insuffisant */
+    gap: 100px; /* Espacement de 100px entre les images */
+    max-width: 100%; /* Assure que le conteneur ne dépasse pas la largeur de l'écran */
+}
+
+/* Style pour les éléments de la galerie */
+.gallery-item {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    overflow: hidden; /* Assure que tout dépassement est caché */
+}
+
+/* Style pour les images dans les éléments de galerie */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que les images couvrent l'espace sans déformation */
+    transition: transform 0.5s ease; /* Ajoute une transition pour l'effet de zoom */
+}
+
+/* Effet de zoom au survol des images */
+.gallery-item:hover img {
+    transform: scale(1.05); /* Agrandit l'image de 5% au survol */
+}
+
+/* Style pour l'overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Couvre toute la surface de l'image */
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour améliorer la lisibilité */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    box-sizing: border-box; /* Inclut le padding dans la largeur et hauteur */
+    transition: opacity 0.5s ease; /* Transition pour la visibilité */
+    opacity: 1; /* Toujours visible */
+}
+
+/* Style pour le texte dans l'overlay */
+.overlay h3 {
+    margin: 0; /* Supprime les marges par défaut du h3 */
+    font-size: 18px; /* Taille du texte du titre */
+}
+
+.overlay .cta-button {
+    background-color: #ff0000; /* Couleur du bouton (modifiable via variable CSS) */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.overlay .cta-button:hover {
+    background-color: #cc0000; /* Couleur de survol du bouton (modifiable via variable CSS) */
+}
