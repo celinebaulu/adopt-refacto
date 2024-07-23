@@ -256,12 +256,14 @@ header {
 .full-width-image {
     width: 100%;
     overflow: hidden;
+    margin: 0; /* Assure que la section est collée au footer */
 }
 
 .banner-img {
     width: 100%;
     height: 500px;
     object-fit: cover;
+    display: block;
 }
 
 /* Style pour le footer */
@@ -271,6 +273,7 @@ header {
     padding: 20px;
     text-align: center;
     font-family: 'Gotham', sans-serif; /* Police Gotham appliquée au footer */
+    margin-top: 0; /* Assure que le footer est collé au contenu précédent */
 }
 
 .footer-content {
