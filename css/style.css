@@ -89,10 +89,17 @@ header {
     gap: 20px;
 }
 
+.header-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover; /* Assure que les images sont bien dimensionnées sans déformation */
+}
+
+/* Assurez-vous que les icônes ont un espace suffisant */
 .header-icon {
-    text-decoration: none;
-    color: #333;
-    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Style pour la barre de recherche */
