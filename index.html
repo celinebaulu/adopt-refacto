@@ -15,12 +15,14 @@
     <!-- Header -->
     <header>
         <div class="header-content">
-            <img src="images/logo-principal.png" alt="logo principal adopt" class="logo">
-            <nav class="main-nav">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-principal.png" alt="logo principal adopt" class="logo">
+            </a>
+            <nav class="main-nav" id="main-nav">
                 <ul class="nav-menu">
                     <li><a href="offres.html">Offres</a></li>
-                    <li><a href="solde.html">Soldes</a></li>
-                    <li><a href="parfums.html">Parfums</a></li>
+                    <li><a href="soldes.html">Soldes</a></li>
+                    <li><a href="parfum.html">Parfum</a></li>
                     <li><a href="corps.html">Corps</a></li>
                     <li><a href="visage.html">Visage</a></li>
                     <li><a href="maquillage.html">Maquillage</a></li>
@@ -28,10 +30,11 @@
                     <li><a href="nouveautes.html">Nouveautés</a></li>
                 </ul>
             </nav>
+            <button class="burger-menu" id="burger-menu">&#9776;</button>
             <div class="header-icons">
-                <a href="#" class="header-icon">🛒</a>
-                <a href="#" class="header-icon">👤</a>
-                <a href="#" class="header-icon">❤️</a>
+                <a href="panier.html" class="header-icon">🛒</a>
+                <a href="espace-utilisateur.html" class="header-icon">👤</a>
+                <a href="favoris.html" class="header-icon">❤️</a>
             </div>
         </div>
         <div class="search-bar">
@@ -72,5 +75,6 @@
         </div>
     </div>
     
+    <script src="js/main.js"></script>
 </body>
 </html>

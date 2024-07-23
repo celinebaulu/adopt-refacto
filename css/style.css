@@ -12,9 +12,11 @@ body {
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
-    position: relative; /* Ne fixe pas le bandeau mais le garde en haut */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    z-index: 1000; /* Assure que le bandeau reste au-dessus des autres éléments */
+    z-index: 1000;
 }
 
 /* Style pour le contenu du bandeau */
@@ -28,7 +30,7 @@ header {
     background: #fff;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
-    margin-top: 50px; /* Espace pour le bandeau au-dessus du header */
+    margin-top: 50px;
 }
 
 .header-content {
@@ -41,11 +43,20 @@ header {
 .logo {
     width: 70px;
     height: 70px;
+    cursor: pointer;
+}
+
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .main-nav {
     flex: 1;
-    margin-left: 50px; /* Espace entre le logo et le menu */
+    margin-left: 50px;
 }
 
 .nav-menu {
@@ -56,7 +67,7 @@ header {
 }
 
 .nav-menu li {
-    margin: 0 20px; /* Espacement de 20px entre les éléments de menu */
+    margin: 0 20px;
 }
 
 .nav-menu a {
@@ -67,7 +78,7 @@ header {
 }
 
 .nav-menu a:hover {
-    color: #ff0000; /* Couleur de survol pour le mot "Soldes" */
+    color: #ff0000;
 }
 
 .header-icons {
@@ -110,79 +121,72 @@ header {
 /* Style pour l'image principale */
 .main-image {
     width: 100%;
-    height: 500px; /* Hauteur fixe pour l'image principale */
+    height: 500px;
     overflow: hidden;
 }
 
 .main-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Assure que l'image couvre tout l'espace sans déformation */
+    object-fit: cover;
 }
 
 /* Style pour la galerie d'images */
 .image-gallery {
     padding: 20px;
     display: flex;
-    justify-content: center; /* Centre la galerie horizontalement */
+    justify-content: center;
 }
 
 .gallery-container {
     display: flex;
-    justify-content: center; /* Centre les images dans le conteneur */
-    flex-wrap: wrap; /* Permet de passer à la ligne suivante si l'espace est insuffisant */
-    gap: 100px; /* Espacement de 100px entre les images */
-    max-width: 100%; /* Assure que le conteneur ne dépasse pas la largeur de l'écran */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    max-width: 100%;
 }
 
-/* Style pour les éléments de la galerie */
 .gallery-item {
     position: relative;
     width: 400px;
     height: 350px;
-    overflow: hidden; /* Assure que tout dépassement est caché */
+    overflow: hidden;
+    transition: transform 0.5s ease;
 }
 
-/* Style pour les images dans les éléments de galerie */
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Assure que les images couvrent l'espace sans déformation */
-    transition: transform 0.5s ease; /* Ajoute une transition pour l'effet de zoom */
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* Effet de zoom au survol des images */
 .gallery-item:hover img {
-    transform: scale(1.05); /* Agrandit l'image de 5% au survol */
+    transform: scale(1.05);
 }
 
-/* Style pour l'overlay */
+/* Style pour le texte au milieu de l'image */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Couvre toute la surface de l'image */
-    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour améliorer la lisibilité */
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: #fff;
+    align-items: center;
     text-align: center;
-    padding: 10px 20px;
-    box-sizing: border-box; /* Inclut le padding dans la largeur et hauteur */
-    transition: opacity 0.5s ease; /* Transition pour la visibilité */
-    opacity: 1; /* Toujours visible */
+    color: #fff;
 }
 
-/* Style pour le texte dans l'overlay */
 .overlay h3 {
-    margin: 0; /* Supprime les marges par défaut du h3 */
-    font-size: 18px; /* Taille du texte du titre */
+    margin: 0;
+    font-size: 18px;
 }
 
 .overlay .cta-button {
-    background-color: #ff0000; /* Couleur du bouton (modifiable via variable CSS) */
+    background-color: #ff0000;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -194,5 +198,104 @@ header {
 }
 
 .overlay .cta-button:hover {
-    background-color: #cc0000; /* Couleur de survol du bouton (modifiable via variable CSS) */
+    background-color: #cc0000;
+}
+
+/* Media queries pour rendre le site responsive */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 250px;
+        background: rgba(255, 255, 255, 0.9);
+        transition: left 0.3s ease;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .main-nav.open {
+        left: 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .header-icons {
+        margin-top: 10px;
+    }
+
+    .gallery-container {
+        gap: 50px;
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 0 10px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+    }
+
+    .gallery-container {
+        gap: 20px;
+    }
+}
+
+/* Additional CSS for mobile menu */
+@media (max-width: 480px) {
+    .main-nav {
+        background: rgba(255, 255, 255, 0.9);
+        width: 80%;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .main-nav.open {
+        left: 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .header-icons {
+        margin-top: 10px;
+    }
 }
