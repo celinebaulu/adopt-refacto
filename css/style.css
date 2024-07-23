@@ -121,6 +121,8 @@ header {
     background-color: #555;
 }
 
+/* CARROUSEL - ne pas toucher !!!! */
+
 /* Style pour le conteneur du carrousel */
 .carousel-container {
     position: relative;
@@ -376,53 +378,80 @@ header {
 .site-footer {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 40px 20px; /* Augmente l'espacement */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: auto; /* Assure que le footer reste en bas */
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Aligne les éléments sur toute la largeur */
+    max-width: 1200px; /* Limite la largeur du contenu */
+    width: 100%;
 }
 
 .footer-info, .footer-links, .footer-social {
-    margin-bottom: 20px;
+    margin: 0 15px; /* Espacement entre les sections */
+    flex: 1 1 200px; /* Flexibilité pour les tailles des colonnes */
 }
 
 .footer-info h3, .footer-links h3, .footer-social h3 {
-    margin: 0;
+    margin-bottom: 15px; /* Espace sous le titre */
+    font-size: 18px; /* Taille du texte des titres */
+    font-weight: 700;
+    border-bottom: 2px solid #ff0000; /* Ligne sous les titres */
+    padding-bottom: 10px; /* Espacement sous la ligne */
 }
 
 .footer-links ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-links li {
-    margin: 5px 0;
+    margin: 10px 0; /* Espacement entre les liens */
 }
 
 .footer-links a {
     color: #fff;
     text-decoration: none;
+    font-size: 16px; /* Taille du texte des liens */
+    transition: color 0.3s;
 }
 
 .footer-links a:hover {
+    color: #ff0000; /* Couleur au survol des liens */
     text-decoration: underline;
 }
 
-.social-icon img {
-    width: 24px;
-    height: 24px;
-    margin: 0 10px;
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacement entre les icônes sociales */
 }
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ddd;
+}
+
 
 /* Styles pour le bouton retirer des favoris */
 .remove-favorite {
     background-color: #ff0000;
-    color: #fff;
+    color: #3f3737;
     border: none;
     padding: 10px 20px;
     font-size: 14px;
