@@ -41,3 +41,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.cta-button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.closest('.gallery-item').dataset.category;
+            alert(`Afficher les produits de la catégorie: ${category}`);
+            // Vous pouvez remplacer l'alerte par une redirection ou une autre action selon vos besoins.
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselContainer = document.querySelector('.carousel-container');
+    const mainImage = document.querySelector('.main-image');
+    const images = document.querySelectorAll('.main-image img');
+    const totalImages = images.length;
+    let currentIndex = 0;
+
+    function showImage(index) {
+        const offset = -index * 100; // Décale l'image en pourcentage
+        mainImage.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showImage(currentIndex);
+    }
+
+    document.querySelector('.carousel-next').addEventListener('click', nextImage);
+    document.querySelector('.carousel-prev').addEventListener('click', prevImage);
+
+    // Passage automatique d'image toutes les 5 secondes
+    setInterval(nextImage, 5000);
+
+    // Initialisation
+    showImage(currentIndex);
+});
+
+

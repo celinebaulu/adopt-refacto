@@ -121,71 +121,127 @@ header {
     background-color: #555;
 }
 
-/* Style pour l'image principale */
-.main-image {
+/* Style pour le conteneur du carrousel */
+.carousel-container {
+    position: relative;
     width: 100%;
-    height: 500px;
+    height: 500px; /* Hauteur fixe du carrousel */
     overflow: hidden;
+}
+
+/* Style pour les images du carrousel */
+.main-image {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
 }
 
 .main-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
-/* Style pour la galerie d'images */
+/* Style pour les boutons de navigation */
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+    border-radius: 50%;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 300px; /* Réduit la hauteur sur les écrans plus petits */
+    }
+
+    .carousel-prev, .carousel-next {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+
+/* CATEGORIES PRODUITS - ne pas toucher !!!! */
+/* Style pour les catégories produits */
 .image-gallery {
     padding: 20px;
-    display: flex;
-    justify-content: center;
+    background-color: #f9f9f9; /* Couleur de fond pour faire ressortir la galerie */
 }
 
 .gallery-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 100px;
-    max-width: 100%;
+    gap: 20px; /* Réduit l'espace entre les éléments */
+    max-width: 1200px; /* Limite la largeur maximale pour une meilleure présentation */
+    margin: 0 auto;
 }
 
 .gallery-item {
     position: relative;
-    width: 400px;
-    height: 350px;
+    width: 350px; /* Réduit la largeur pour un meilleur ajustement sur les petits écrans */
+    height: 400px; /* Ajuste la hauteur en proportion */
     overflow: hidden;
-    transition: transform 0.5s ease;
+    border-radius: 8px; /* Ajoute des coins arrondis pour un aspect moderne */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère pour donner de la profondeur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1); /* Augmente l'effet de zoom */
 }
 
-/* Style pour le texte au milieu de l'image */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6); /* Augmente l'opacité pour un contraste plus élevé */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1; /* Affiche l'overlay au survol */
 }
 
 .overlay h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 20px; /* Augmente la taille du texte pour plus de visibilité */
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .overlay .cta-button {
@@ -193,20 +249,36 @@ header {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 16px; /* Augmente la taille du texte du bouton pour le rendre plus visible */
     cursor: pointer;
     border-radius: 4px;
     text-transform: uppercase;
-    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .overlay .cta-button:hover {
-    background-color: #cc0000;
+    background-color: #cc0000; /* Assombrit le bouton au survol */
 }
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .gallery-container {
+        gap: 15px;
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* AVIS CLIENT - ne pas toucher !!!! */
 
 /* Style pour les avis clients */
 .customer-reviews {
-    padding: 20px;
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Couleur de fond légère pour les avis */
     text-align: center;
 }
 
@@ -215,21 +287,39 @@ header {
     text-transform: uppercase;
     font-family: 'Gotham', sans-serif;
     margin-bottom: 20px;
+    color: #333;
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacement entre les avis */
+    justify-content: center;
 }
 
 .review-item {
+    background-color: #fff; /* Fond blanc pour les avis */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px; /* Largeur fixe pour chaque avis */
+    text-align: center; /* Centre le texte */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin-bottom: 20px;
+    align-items: center; /* Centre les éléments dans le conteneur */
+}
+
+.review-item:hover {
+    transform: translateY(-5px); /* Léger effet d'élévation au survol */
 }
 
 .review-item img {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .rating {
@@ -238,17 +328,36 @@ header {
 
 .rating span {
     color: #ffcc00;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .comment {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 10px;
+    color: #555; /* Couleur de texte des commentaires */
 }
 
 .customer-name {
     font-style: italic;
+    font-size: 12px;
+    color: #888; /* Couleur de texte des noms de clients */
 }
+
+/* Media queries pour les avis sur les petits écrans */
+@media (max-width: 768px) {
+    .review-item {
+        width: 100%;
+        max-width: 400px; /* Largeur maximale sur les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .review-item {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
 
 /* Style pour l'image pleine largeur */
 .full-width-image {
