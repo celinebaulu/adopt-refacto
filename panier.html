@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - Adopt</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Bandeau -->
+    <div class="bandeau">
+        <div class="bandeau-message">Livraison offerte dès 30€ !</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-principal.png" alt="logo principal adopt" class="logo">
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="offres.html">Offres</a></li>
+                    <li><a href="soldes.html">Soldes</a></li>
+                    <li><a href="parfum.html">Parfum</a></li>
+                    <li><a href="corps.html">Corps</a></li>
+                    <li><a href="visage.html">Visage</a></li>
+                    <li><a href="maquillage.html">Maquillage</a></li>
+                    <li><a href="cadeau.html">Cadeau</a></li>
+                    <li><a href="nouveautes.html">Nouveautés</a></li>
+                </ul>
+            </nav>
+            <button class="burger-menu" id="burger-menu">&#9776;</button>
+            <div class="header-icons">
+                <a href="panier.html" class="header-icon">🛒</a>
+                <a href="moncompte.html" class="header-icon">👤</a>
+                <a href="favoris.html" class="header-icon">❤️</a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher...">
+            <button type="submit">Recherche</button>
+        </div>
+    </header>
+
+    <!-- Section panier -->
+    <main>
+        <div class="cart-container">
+            <h1>Votre Panier</h1>
+            <div class="cart-items">
+                <!-- Article 1 -->
+                <div class="cart-item">
+                    <img src="images/product1.png" alt="Produit 1" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h2 class="cart-item-title">Nom du Produit 1</h2>
+                        <p class="cart-item-price">25,00 €</p>
+                        <input type="number" value="1" min="1" class="cart-item-quantity">
+                        <button class="remove-item-button">Supprimer</button>
+                    </div>
+                </div>
+                <!-- Article 2 -->
+                <div class="cart-item">
+                    <img src="images/product2.png" alt="Produit 2" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h2 class="cart-item-title">Nom du Produit 2</h2>
+                        <p class="cart-item-price">15,00 €</p>
+                        <input type="number" value="2" min="1" class="cart-item-quantity">
+                        <button class="remove-item-button">Supprimer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Résumé de la Commande</h2>
+                <p class="summary-item">Sous-total : <span>40,00 €</span></p>
+                <p class="summary-item">Frais de livraison : <span>5,00 €</span></p>
+                <p class="summary-total">Total : <span>45,00 €</span></p>
+                <button class="checkout-button">Procéder au Paiement</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Contact</h3>
+                <p>Email: contact@adopt.com</p>
+                <p>Téléphone: +33 4 79 00 00 00</p>
+                <p>Adresse: 123 Rue du Commerce, Chambéry</p>
+            </div>
+            <div class="footer-links">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="a-propos.html">À Propos</a></li>
+                    <li><a href="conditions.html">Conditions Générales</a></li>
+                    <li><a href="politique-confidentialite.html">Politique de Confidentialité</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Suivez-nous</h3>
+                <a href="https://facebook.com" class="social-icon"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                <a href="https://instagram.com" class="social-icon"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                <a href="https://twitter.com" class="social-icon"><img src="images/twitter-icon.png" alt="Twitter"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

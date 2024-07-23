@@ -15,3 +15,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const removeButtons = document.querySelectorAll('.remove-favorite');
+
+    removeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Récupère l'ID du produit à retirer
+            const productId = button.getAttribute('data-id');
+            const favoriteItem = document.getElementById(productId);
+
+            // Retirer l'élément du DOM
+            if (favoriteItem) {
+                favoriteItem.remove();
+            }
+
+            // Optionnel : Envoyer une requête pour mettre à jour les favoris sur le serveur
+            // fetch('/remove-favorite', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({ id: productId })
+            // });
+        });
+    });
+});
