@@ -1,0 +1,281 @@
+/* Styles généraux pour le body */
+body {
+    margin: 0;
+    font-family: 'Gotham', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style pour le bandeau */
+.bandeau {
+    background-color: #49583C;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Style pour le contenu du bandeau */
+.bandeau-message {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Style pour le header */
+header {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.main-nav {
+    flex: 1;
+    margin-left: 50px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin: 0 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav-menu a:hover {
+    color: #ff0000;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.header-icon {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Style pour la barre de recherche */
+.search-bar {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search-bar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Conteneur principal pour gérer l'espace et le placement */
+#products-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Style spécifique pour les filtres de la page des produits */
+.filters {
+    margin: 20px auto; /* Centre les filtres */
+    text-align: center;
+    max-width: 1200px; /* Largeur maximale pour les filtres */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre pour l'effet de profondeur */
+}
+
+.filters label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.filters select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style pour la section des produits */
+.products {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+/* Style pour les cartes produits */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+    background: #fff;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #ff0000;
+    margin: 10px 0;
+}
+
+.btn-favorite, .btn-add-to-cart {
+    border: none;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-favorite:hover, .btn-add-to-cart:hover {
+    background-color: #cc0000;
+}
+
+
+
+/* Style pour le footer */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px; /* Augmente l'espacement */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto; /* Assure que le footer reste en bas */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Aligne les éléments sur toute la largeur */
+    max-width: 1200px; /* Limite la largeur du contenu */
+    width: 100%;
+}
+
+.footer-info, .footer-links, .footer-social {
+    margin: 0 15px; /* Espacement entre les sections */
+    flex: 1 1 200px; /* Flexibilité pour les tailles des colonnes */
+}
+
+.footer-info h3, .footer-links h3, .footer-social h3 {
+    margin-bottom: 15px; /* Espace sous le titre */
+    font-size: 18px; /* Taille du texte des titres */
+    font-weight: 700;
+    border-bottom: 2px solid #ff0000; /* Ligne sous les titres */
+    padding-bottom: 10px; /* Espacement sous la ligne */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin: 10px 0; /* Espacement entre les liens */
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px; /* Taille du texte des liens */
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff0000; /* Couleur au survol des liens */
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacement entre les icônes sociales */
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ddd;
+}

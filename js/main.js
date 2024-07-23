@@ -87,3 +87,77 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// main.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Fonction pour ajouter un produit aux favoris
+    function addToFavorites(productId) {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        if (!favorites.includes(productId)) {
+            favorites.push(productId);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            alert('Produit ajouté aux favoris!');
+        } else {
+            alert('Ce produit est déjà dans vos favoris!');
+        }
+    }
+
+    // Fonction pour ajouter un produit au panier
+    function addToCart(productId) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (!cart.includes(productId)) {
+            cart.push(productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Produit ajouté au panier!');
+        } else {
+            alert('Ce produit est déjà dans le panier!');
+        }
+    }
+
+    // Gestion des clics sur les boutons
+    document.querySelectorAll('.btn-favorite').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            addToFavorites(productId);
+        });
+    });
+
+    document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            addToCart(productId);
+        });
+    });
+});
+
+// sort.js
+document.addEventListener('DOMContentLoaded', function() {
+    const sortBySelect = document.getElementById('sort-by');
+
+    sortBySelect.addEventListener('change', function() {
+        const sortOrder = this.value;
+        const productsContainer = document.querySelector('.products');
+        const productCards = Array.from(productsContainer.children);
+
+        productCards.sort((a, b) => {
+            const titleA = a.querySelector('.product-title').textContent.trim();
+            const titleB = b.querySelector('.product-title').textContent.trim();
+            const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('€', '').trim());
+            const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('€', '').trim());
+
+            if (sortOrder === 'alpha-asc') {
+                return titleA.localeCompare(titleB);
+            } else if (sortOrder === 'alpha-desc') {
+                return titleB.localeCompare(titleA);
+            } else if (sortOrder === 'price-asc') {
+                return priceA - priceB;
+            } else if (sortOrder === 'price-desc') {
+                return priceB - priceA;
+            } else {
+                return 0; // Default
+            }
+        });
+
+        productsContainer.innerHTML = '';
+        productCards.forEach(card => productsContainer.appendChild(card));
+    });
+});

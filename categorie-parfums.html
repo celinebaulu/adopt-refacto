@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt - Parfums français</title>
+    <link rel="stylesheet" href="css/style-category.css">
+</head>
+<body>
+    <!-- Bandeau -->
+    <div class="bandeau">
+        <div class="bandeau-message">Livraison offerte dès 30€ !</div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-principal.png" alt="logo principal adopt" class="logo">
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="offres.html">Offres</a></li>
+                    <li><a href="soldes.html">Soldes</a></li>
+                    <li><a href="categorie-parfums.html">Parfums</a></li>
+                    <li><a href="categorie-corps.html">Corps</a></li>
+                    <li><a href="visage.html">Visage</a></li>
+                    <li><a href="maquillage.html">Maquillage</a></li>
+                    <li><a href="cadeau.html">Cadeau</a></li>
+                    <li><a href="nouveautes.html">Nouveautés</a></li>
+                </ul>
+            </nav>
+            <button class="burger-menu" id="burger-menu" aria-label="Menu principal">&#9776;</button>
+            <div class="header-icons">
+                <a href="panier.html" class="header-icon">🛒</a>
+                <a href="moncompte.html" class="header-icon">👤</a>
+                <a href="favoris.html" class="header-icon">❤️</a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher...">
+            <button type="submit" aria-label="Lancer la recherche">Recherche</button>
+        </div>
+    </header>
+
+    <!-- Contenu de la page des parfums -->
+    <main id="products-main">
+        <section class="filters">
+            <label for="sort-by">Trier par :</label>
+            <select id="sort-by">
+                <option value="default">-- Sélectionner --</option>
+                <option value="alpha-asc">Ordre alphabétique (A-Z)</option>
+                <option value="alpha-desc">Ordre alphabétique (Z-A)</option>
+                <option value="price-asc">Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
+            </select>
+        </section>
+
+        <section class="products">
+            <div class="product-card" id="product-1">
+                <img src="images/produits/parfums/image-produit-parfum.png" alt="Produit 1" class="product-image">
+                <h2 class="product-title">Pamplemousse Party</h2>
+                <p class="product-price">11,90 €</p>
+                <button class="btn-favorite" data-product-id="1">Ajouter aux favoris</button>
+                <button class="btn-add-to-cart" data-product-id="1">Acheter maintenant</button>
+            </div>
+            <div class="product-card" id="product-2">
+                <img src="images/produits/parfums/image-produit-parfum.png" alt="Produit 2" class="product-image">
+                <h2 class="product-title">Ginger Splash</h2>
+                <p class="product-price">10,90 €</p>
+                <button class="btn-favorite" data-product-id="2">Ajouter aux favoris</button>
+                <button class="btn-add-to-cart" data-product-id="2">Acheter maintenant</button>
+            </div>
+            <div class="product-card" id="product-3">
+                <img src="images/produits/parfums/image-produit-parfum.png" alt="Produit 3" class="product-image">
+                <h2 class="product-title">Sun is shinning</h2>
+                <p class="product-price">9,90 €</p>
+                <button class="btn-favorite" data-product-id="3">Ajouter aux favoris</button>
+                <button class="btn-add-to-cart" data-product-id="3">Acheter maintenant</button>
+            </div>
+            <div class="product-card" id="product-4">
+                <img src="images/produits/parfums/image-produit-parfum.png" alt="Produit 4" class="product-image">
+                <h2 class="product-title">Oiseau de nuit</h2>
+                <p class="product-price">9,90 €</p>
+                <button class="btn-favorite" data-product-id="4">Ajouter aux favoris</button>
+                <button class="btn-add-to-cart" data-product-id="4">Acheter maintenant</button>
+            </div>
+            <div class="product-card" id="product-4">
+                <img src="images/produits/parfums/image-produit-parfum.png" alt="Produit 5" class="product-image">
+                <h2 class="product-title">Never forget</h2>
+                <p class="product-price">10,90 €</p>
+                <button class="btn-favorite" data-product-id="5">Ajouter aux favoris</button>
+                <button class="btn-add-to-cart" data-product-id="5">Acheter maintenant</button>
+            </div>
+            <!-- Ajoutez d'autres fiches produits ici -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Contactez-nous</h3>
+                <p>Adresse : 123 Rue de l'E-Commerce, 75000 Paris</p>
+                <p>Téléphone : 01 23 45 67 89</p>
+                <p>Email : contact@ecommerce.com</p>
+            </div>
+            <div class="footer-links">
+                <h3>Liens utiles</h3>
+                <ul>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="conditions.html">Conditions générales</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/"><img src="images/icones/facebook.png" alt="Facebook" class="social-icon"></a>
+                    <a href="https://twitter.com/"><img src="images/icones/twitter.png" alt="Twitter" class="social-icon"></a>
+                    <a href="https://www.instagram.com/"><img src="images/icones/instagram.png" alt="Instagram" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/sort.js"></script>
+</body>
+</html>
