@@ -129,6 +129,41 @@ header {
     background-color: #555;
 }
 
+/* Style pour le fil d'Ariane */
+.breadcrumb {
+    font-family: 'Gotham', sans-serif;
+    font-size: 14px;
+    margin: 10px 20px; /* Espace autour du fil d'Ariane */
+    padding: 10px;
+    background-color: #f9f9f9; /* Fond léger */
+    border-radius: 4px;
+    display: inline-block; /* Alignement en ligne */
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center; /* Aligne l'icône au centre verticalement */
+}
+
+.breadcrumb img {
+    width: 16px; /* Largeur de l'icône */
+    height: 16px; /* Hauteur de l'icône */
+    margin-right: 5px; /* Espace entre l'icône et le texte suivant */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+.breadcrumb span {
+    color: #666; /* Couleur pour la page actuelle */
+}
+
+
+
 /* Conteneur principal pour gérer l'espace et le placement */
 #products-main {
     display: flex;
@@ -183,7 +218,13 @@ header {
     text-align: center;
     padding: 15px;
     background: #fff;
+    transition: transform 0.3s ease; /* Transition en douceur */
 }
+
+.product-card:hover {
+    transform: scale(1.02); /* Zoom à 102% au survol */
+}
+
 
 .product-image {
     width: 100%;
@@ -265,7 +306,6 @@ header {
     background-color: #F4C430; /* Couleur de fond au survol */
     border-color: #F4C430; /* Couleur de la bordure au survol pour correspondre à la couleur de fond */
 }
-
 
 
 /* Style pour le footer */
