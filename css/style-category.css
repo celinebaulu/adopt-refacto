@@ -240,6 +240,17 @@ header {
     margin: 10px 0; /* Marges autour du titre */
 }
 
+/* Style pour la description du produit */
+.product-description {
+    font-family: 'Gotham', sans-serif;
+    font-size: 11px; /* Taille du texte moins gros que le titre */
+    text-transform: uppercase; /* Texte en majuscules */
+    text-align: center; /* Centré */
+    margin: 5px 0; /* Espace au-dessus et en-dessous */
+    font-weight: bold;
+    color: #D5702B; /* Couleur du texte */
+}
+
 .product-price {
     font-family: 'Gotham', sans-serif; /* Applique la police Gotham */
     font-size: 13px; /* Taille du texte */
