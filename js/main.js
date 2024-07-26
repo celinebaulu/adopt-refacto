@@ -161,3 +161,5 @@ document.addEventListener('DOMContentLoaded', function() {
         productCards.forEach(card => productsContainer.appendChild(card));
     });
 });
+
+

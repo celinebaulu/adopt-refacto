@@ -209,6 +209,12 @@ header {
     box-sizing: border-box; /* Inclut le padding dans la largeur totale */
 }
 
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 /* Style pour les cartes produits */
 .product-card {
     border: 1px solid #ddd;
@@ -218,13 +224,14 @@ header {
     text-align: center;
     padding: 15px;
     background: #fff;
-    transition: transform 0.3s ease; /* Transition en douceur */
+    transition: transform 0.3s ease;
+    color: inherit; /* Assure que la couleur du texte reste inchangée */
+    position: relative;
 }
 
 .product-card:hover {
-    transform: scale(1.02); /* Zoom à 102% au survol */
+    transform: scale(1.02);
 }
-
 
 .product-image {
     width: 100%;
@@ -266,6 +273,47 @@ header {
     justify-content: center; /* Centre les boutons horizontalement */
     margin-top: 10px; /* Espace au-dessus des boutons, optionnel */
 }
+
+.product-buttons button {
+    pointer-events: auto;
+}
+
+/* Pour les tags */
+
+/* Style pour les tags */
+.product-tag {
+    position: absolute;
+    top: 20px;  /* Ajustez la valeur pour votre design */
+    left: 20px; /* Ajustez la valeur pour votre design */
+    background-color: rgba(255, 0, 0, 0.8); /* Fond semi-transparent rouge */
+    color: #fff; /* Couleur du texte */
+    padding: 5px 10px; /* Espacement interne */
+    border-radius: 3px; /* Bords arrondis */
+    font-size: 12px; /* Taille de la police */
+    font-family: 'Gotham', sans-serif; /* Applique la police Gotham */
+    text-transform: uppercase; /* Texte en majuscules */
+    z-index: 1; /* S'assure que le tag est au-dessus de l'image */
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 10px; /* Taille du texte des tags */
+    text-transform: uppercase; /* Transforme le texte en majuscules */
+    border-radius: 4px;
+    margin-right: 5px;
+    color: #fff; /* Couleur du texte */
+    background-color: #49583C; /* Couleur de fond par défaut */
+}
+
+.product-tag.vegan {
+    background-color: rgba(0, 128, 0, 0.8); /* Fond semi-transparent vert */
+}
+
+.product-tag.homme {
+    background-color: rgba(0, 128, 0, 0.8); /* Fond semi-transparent bleu */
+}
+
 
 /* Style pour le bouton "Ajouter aux favoris" avec une image */
 .btn-favorite {
