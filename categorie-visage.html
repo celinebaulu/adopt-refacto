@@ -21,7 +21,7 @@
             </a>
             <nav class="main-nav" id="main-nav">
                 <ul class="nav-menu">
-                    <li><a href="categorie-offres.html">Offres</a></li>
+                    <li><a href="categorie-best.html">Best-seller</a></li>
                     <li><a href="categorie-soldes.html">Soldes</a></li>
                     <li><a href="categorie-parfums.html">Parfums</a></li>
                     <li><a href="categorie-corps.html">Corps</a></li>
@@ -50,17 +50,25 @@
         </div>
     </header>
 
-    <nav class="breadcrumb">
-        <a href="index.html">
-            <img src="images/icones/home.png" alt="Homepage">
-        </a> / <span>Corps</span>
-    </nav>
+    <div class="category-banner">
+        <nav class="breadcrumb">
+            <a href="index.html">
+                <img src="images/icones/home.png" alt="Homepage">
+            </a> / <span>Visage</span>
+        </nav>
+        <h1 class="category-title"> Pour votre visage</h1>
+        <p class="category-description">
+            Explorez notre sélection de soins pour le visage, spécialement formulés pour chaque type de peau. <br>
+            Plus de 80 produits dédiés à l'hydratation, la réparation et l'éclat du teint. <br>
+            Des sérums concentrés aux masques apaisants, révélez votre beauté naturelle en toute simplicité.
+        </p>
+    </div>
     
     
     <!-- Contenu de la page des parfums -->
     <main id="products-main">
         <section class="filters">
-            <label for="sort-by">Trier par :</label>
+            <img src="images/icones/filtre-horizontal.png" alt="Trier par" class="sort-icon"> <!-- Remplacez 'sort-icon.png' par le nom de votre image -->
             <select id="sort-by">
                 <option value="default">-- Sélectionner --</option>
                 <option value="alpha-asc">Ordre alphabétique (A-Z)</option>
@@ -73,9 +81,10 @@
         <section class="products">
             <!-- Produit 1 -->
             <div class="product-card" id="product-1">
-                <img src="images/produits/corps/image-gelee-jelly-jamboree.jpg" alt="Jelly jamboree" class="product-image">
-                <h2 class="product-title">Jelly Jamboree</h2>
-                <p class="product-description">Gelée rafraichissante</p>
+                <div class="product-tag vegan">Vegan</div>
+                <img src="images/produits/visage/image-visage-éclat-radieux.jpg" alt="Eclat radieux" class="product-image">
+                <h2 class="product-title">Éclat Radieux </h2>
+                <p class="product-description">Sérum illuminateur 15ml</p>
                 <p class="product-price">5,90 €</p>
                 <div class="product-buttons">
                     <button class="btn-favorite" data-product-id="1">
@@ -87,12 +96,13 @@
                 </div>                   
             </div>
             <!-- Produit 2 -->
-            
+            <a href="fiche-produit-visage-gelée-nettoyante.html" class="product-link"> 
             <div class="product-card" id="product-2">
-                <img src="images/produits/corps/image-corps-bulle-bain-de-jasmin.jpg" alt="Bulle de jasmin" class="product-image">
-                <h2 class="product-title">Bulle de jasmin</h2>
-                <p class="product-description">Bombe de bain</p>
-                <p class="product-price">1,95 €</p>
+                <div class="product-tag hot-sale">Best-seller </div>
+                <img src="images/produits/visage/image-visage-gelée-nettoyante.jpg" alt="Gelée yes you glow" class="product-image">
+                <h2 class="product-title">Yes you Glow</h2>
+                <p class="product-description">Gelée nettoyante 15ml</p>
+                <p class="product-price">4,90 €</p>
                 <div class="product-buttons">
                     <button class="btn-favorite" data-product-id="2">
                         <img src="images/icones/coeur.png" alt="Ajouter aux favoris">
@@ -102,11 +112,13 @@
                     </button>
                 </div>    
             </div>
+            </a>
+            <!-- Produit 3 -->
             <div class="product-card" id="product-3">
-                <img src="images/produits/corps/image-brume-corps-fizz-fresh.jpg" alt="Fizz and Fresh" class="product-image">
-                <h2 class="product-title">Fizz and fresh</h2>
-                <p class="product-description">Brume pour le corps</p>
-                <p class="product-price">5,90 €</p>
+                <img src="images/produits/visage/image-visage-masque-charbon.jpg" alt="Marque au charbon" class="product-image">
+                <h2 class="product-title">Born to be fresh</h2>
+                <p class="product-description">MASQUE TISSU PURIFIANT 14 ML</p>
+                <p class="product-price">3,90 €</p>
                 <div class="product-buttons">
                     <button class="btn-favorite" data-product-id="3">
                         <img src="images/icones/coeur.png" alt="Ajouter aux favoris">
@@ -117,10 +129,10 @@
                 </div>     
             </div>
             <div class="product-card" id="product-4">
-                <img src="images/produits/corps/image-corps-gel-douche-tropical-twist.jpg" alt="Tropical twist" class="product-image">
-                <h2 class="product-title">Tropial twist</h2>
-                <p class="product-description">Gel douche</p>
-                <p class="product-price">4,90 €</p>
+                <img src="images/produits/visage/image-visage-tonic-eclat.jpg" alt="Tonic éclat" class="product-image">
+                <h2 class="product-title">Tonic éclat</h2>
+                <p class="product-description">Lotion tonique 20ml</p>
+                <p class="product-price">7,90 €</p>
                 <div class="product-buttons">
                     <button class="btn-favorite" data-product-id="4">
                         <img src="images/icones/coeur.png" alt="Ajouter aux favoris">
@@ -130,16 +142,17 @@
                     </button>
                 </div>
             </div>
-            <div class="product-card" id="product-4">
-                <img src="images/produits/corps/image-creme-mains-zeste-de-fun.jpg" alt="Zeste de fun" class="product-image">
-                <h2 class="product-title">Zeste de fun</h2>
-                <p class="product-description">Crème pour les mains</p>
-                <p class="product-price">4,90 €</p>
+            <div class="product-card" id="product-5">
+                <div class="product-tag vegan">Vegan</div>
+                <img src="images/produits/visage/image-visage-baume-yeux-repulp.jpg" alt="Baume yeux repulp" class="product-image">
+                <h2 class="product-title">Repulp party</h2>
+                <p class="product-description">Baume pour les yeux 15ml</p>
+                <p class="product-price">10,90 €</p>
                 <div class="product-buttons">
-                    <button class="btn-favorite" data-product-id="1">
+                    <button class="btn-favorite" data-product-id="5">
                         <img src="images/icones/coeur.png" alt="Ajouter aux favoris">
                     </button>
-                    <button class="btn-add-to-cart" data-product-id="1">
+                    <button class="btn-add-to-cart" data-product-id="5">
                         <img src="images/icones/panier.png" alt="Acheter maintenant">
                     </button>
                 </div>

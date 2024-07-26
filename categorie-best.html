@@ -21,7 +21,7 @@
             </a>
             <nav class="main-nav" id="main-nav">
                 <ul class="nav-menu">
-                    <li><a href="categorie-offres.html">Offres</a></li>
+                    <li><a href="categorie-best.html">Best-seller</a></li>
                     <li><a href="categorie-soldes.html">Soldes</a></li>
                     <li><a href="categorie-parfums.html">Parfums</a></li>
                     <li><a href="categorie-corps.html">Corps</a></li>
@@ -49,18 +49,26 @@
             <button type="submit" aria-label="Lancer la recherche">Recherche</button>
         </div>
     </header>
-
-    <nav class="breadcrumb">
-        <a href="index.html">
-            <img src="images/icones/home.png" alt="Homepage">
-        </a> / <span>Offres</span>
-    </nav>
+    <div class="category-banner">
+        <nav class="breadcrumb">
+            <a href="index.html">
+                <img src="images/icones/home.png" alt="Homepage">
+            </a> / <span>Best-seller</span>
+        </nav>
+        <h1 class="category-title"> Découvrez nos best-sellers</h1>
+        <p class="category-description">
+            Découvrez nos best-sellers, soigneusement sélectionnés pour vous offrir le meilleur en matière de soins. <br>
+            Plus de 100 produits plébiscités par nos clients pour leur efficacité et leur qualité. <br>
+            Des indispensables pour le visage aux soins du corps, laissez-vous séduire par les favoris qui ont fait leurs preuves !
+        </p>
+    </div>
     
     
-    <!-- Contenu de la page des parfums -->
+    
+    <!-- Contenu de la page -->
     <main id="products-main">
         <section class="filters">
-            <label for="sort-by">Trier par :</label>
+            <img src="images/icones/filtre-horizontal.png" alt="Trier par" class="sort-icon"> <!-- Remplacez 'sort-icon.png' par le nom de votre image -->
             <select id="sort-by">
                 <option value="default">-- Sélectionner --</option>
                 <option value="alpha-asc">Ordre alphabétique (A-Z)</option>
@@ -70,29 +78,33 @@
             </select>
         </section>
 
+
         <section class="products">
-            <!-- Produit 1 -->
-            <div class="product-card" id="product-1">
-                <img src="images/produits/corps/image-gelee-jelly-jamboree.jpg" alt="Jelly jamboree" class="product-image">
-                <h2 class="product-title">Jelly Jamboree</h2>
-                <p class="product-description">Gelée rafraichissante</p>
-                <p class="product-price">5,90 €</p>
-                <div class="product-buttons">
-                    <button class="btn-favorite" data-product-id="1">
-                        <img src="images/icones/coeur.png" alt="Ajouter aux favoris">
-                    </button>
-                    <button class="btn-add-to-cart" data-product-id="1">
-                        <img src="images/icones/panier.png" alt="Acheter maintenant">
-                    </button>
-                </div>                   
-            </div>
+            <a href="fiche-produit-parfum-sun-shine.html" class="product-link">
+                <div class="product-card" id="product-3">
+                    <div class="product-tag hot-sale">Best-seller </div>
+                    <img src="images/produits/parfums/parfum-sun-is-shining.jpg" alt="Parfum Sun is Shinning" class="product-image">
+                    <h2 class="product-title">Sun Shine</h2>
+                    <p class="product-description">Eau de parfum 30ML</p>
+                    <p class="product-price">9,90 €</p>
+                    <div class="product-buttons">
+                        <button class="btn-favorite" data-product-id="3">
+                            <img src="images/icones/coeur.png" alt="Ajouter aux favoris">
+                        </button>
+                        <button class="btn-add-to-cart" data-product-id="3">
+                            <img src="images/icones/panier.png" alt="Acheter maintenant">
+                        </button>
+                    </div>    
+                </div>
+            </a>
             <!-- Produit 2 -->
-            
+            <a href="fiche-produit-creme-mains-zeste-de-fun.html" class="product-link"> 
             <div class="product-card" id="product-2">
-                <img src="images/produits/corps/image-corps-bulle-bain-de-jasmin.jpg" alt="Bulle de jasmin" class="product-image">
-                <h2 class="product-title">Bulle de jasmin</h2>
-                <p class="product-description">Bombe de bain</p>
-                <p class="product-price">1,95 €</p>
+                <div class="product-tag hot-sale">Best-seller </div>
+                <img src="images/produits/corps/image-creme-mains-zeste-de-fun.jpg" alt="Zeste de fun" class="product-image">
+                <h2 class="product-title">Zeste de fun</h2>
+                <p class="product-description">Crème pour les mains 10ml</p>
+                <p class="product-price">4,90 €</p>
                 <div class="product-buttons">
                     <button class="btn-favorite" data-product-id="2">
                         <img src="images/icones/coeur.png" alt="Ajouter aux favoris">
@@ -100,22 +112,28 @@
                     <button class="btn-add-to-cart" data-product-id="2">
                         <img src="images/icones/panier.png" alt="Acheter maintenant">
                     </button>
-                </div>    
+                </div>
             </div>
-            <div class="product-card" id="product-3">
-                <img src="images/produits/corps/image-brume-corps-fizz-fresh.jpg" alt="Fizz and Fresh" class="product-image">
-                <h2 class="product-title">Fizz and fresh</h2>
-                <p class="product-description">Brume pour le corps</p>
-                <p class="product-price">5,90 €</p>
-                <div class="product-buttons">
-                    <button class="btn-favorite" data-product-id="3">
-                        <img src="images/icones/coeur.png" alt="Ajouter aux favoris">
-                    </button>
-                    <button class="btn-add-to-cart" data-product-id="3">
-                        <img src="images/icones/panier.png" alt="Acheter maintenant">
-                    </button>
-                </div>     
-            </div>
+        </a>
+        <!-- Produit 3 -->
+        <a href="fiche-produit-visage-gelée-nettoyante.html" class="product-link"> 
+        <div class="product-card" id="product-2">
+            <div class="product-tag hot-sale">Best-seller </div>
+            <img src="images/produits/visage/image-visage-gelée-nettoyante.jpg" alt="Gelée yes you glow" class="product-image">
+            <h2 class="product-title">Yes you Glow</h2>
+            <p class="product-description">Gelée nettoyante 15ml</p>
+            <p class="product-price">4,90 €</p>
+            <div class="product-buttons">
+                <button class="btn-favorite" data-product-id="2">
+                    <img src="images/icones/coeur.png" alt="Ajouter aux favoris">
+                </button>
+                <button class="btn-add-to-cart" data-product-id="2">
+                    <img src="images/icones/panier.png" alt="Acheter maintenant">
+                </button>
+            </div>    
+        </div>
+        </a>
+        <!-- Produit 4 -->
             <div class="product-card" id="product-4">
                 <img src="images/produits/corps/image-corps-gel-douche-tropical-twist.jpg" alt="Tropical twist" class="product-image">
                 <h2 class="product-title">Tropial twist</h2>

@@ -130,10 +130,12 @@ header {
 }
 
 /* Style pour le rectangle de la catégorie */
+
+
 .category-banner {
     width: 100%; /* Prend toute la largeur de la page */
-    background: linear-gradient(to right, #F4C430, #D5702B); /* Dégradé de gauche à droite */
-    padding: 10px 0; /* Espacement vertical */
+    background: linear-gradient(to right, #F4C430, #aaa9b4); /* Dégradé de gauche à droite */
+    padding: 5px 0; /* Espacement vertical */
     text-align: left; /* Alignement à gauche */
 }
 
@@ -203,12 +205,23 @@ header {
     margin: 20px auto; /* Centre les filtres */
     text-align: center;
     max-width: 1200px; /* Largeur maximale pour les filtres */
-    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 2px;
+    border-radius:40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre pour l'effet de profondeur */
 }
+
+.filters img.sort-icon {
+    width: 30px; /* Ajustez la largeur selon vos besoins */
+    height: auto; /* Maintient le ratio de l'image */
+    margin-right: 10px; /* Espace entre l'image et le select */
+    vertical-align: middle; /* Aligne l'image verticalement avec le select */
+}
+
 
 .filters label {
     font-size: 11px;
@@ -222,9 +235,12 @@ header {
     font-size: 11px;
     text-transform: uppercase; /* Transforme le texte en majuscules */
     font-family: 'Gotham', sans-serif; /* Applique la police Gotham */
-    border: 1px solid #ddd;
+    border: none; /* Supprime la bordure */
+    outline: none; /* Supprime le contour par défaut au focus */
     border-radius: 2px;
 }
+
+
 
 /* Style pour la section des produits */
 .products {

@@ -21,7 +21,7 @@
             </a>
             <nav class="main-nav" id="main-nav">
                 <ul class="nav-menu">
-                    <li><a href="categorie-offres.html">Offres</a></li>
+                    <li><a href="categorie-best.html">Best-seller</a></li>
                     <li><a href="categorie-soldes.html">Soldes</a></li>
                     <li><a href="categorie-parfums.html">Parfums</a></li>
                     <li><a href="categorie-corps.html">Corps</a></li>
@@ -49,14 +49,13 @@
             <button type="submit" aria-label="Lancer la recherche">Recherche</button>
         </div>
     </header>
-
     <div class="category-banner">
         <nav class="breadcrumb">
             <a href="index.html">
                 <img src="images/icones/home.png" alt="Homepage">
             </a> / <span>Parfums</span>
         </nav>
-        <h1 class="category-title"> Parfums</h1>
+        <h1 class="category-title"> Découvrez nos parfums</h1>
         <p class="category-description">
             Découvrez notre collection de parfums pour homme, femme et mixte, élaborés avec soin. <br>
             Plus de 200 fragrances uniques pour répondre à toutes vos envies. <br>
@@ -65,10 +64,11 @@
     </div>
     
     
+    
     <!-- Contenu de la page des parfums -->
     <main id="products-main">
         <section class="filters">
-            <label for="sort-by">Trier par :</label>
+            <img src="images/icones/filtre-horizontal.png" alt="Trier par" class="sort-icon"> <!-- Remplacez 'sort-icon.png' par le nom de votre image -->
             <select id="sort-by">
                 <option value="default">-- Sélectionner --</option>
                 <option value="alpha-asc">Ordre alphabétique (A-Z)</option>
@@ -117,6 +117,7 @@
             <!-- Produit 3 -->
             <a href="fiche-produit-parfum-sun-shine.html" class="product-link">
                 <div class="product-card" id="product-3">
+                    <div class="product-tag hot-sale">Best-seller </div>
                     <img src="images/produits/parfums/parfum-sun-is-shining.jpg" alt="Parfum Sun is Shinning" class="product-image">
                     <h2 class="product-title">Sun Shine</h2>
                     <p class="product-description">Eau de parfum 30ML</p>

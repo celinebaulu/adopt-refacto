@@ -21,7 +21,7 @@
             </a>
             <nav class="main-nav" id="main-nav">
                 <ul class="nav-menu">
-                    <li><a href="categorie-offres.html">Offres</a></li>
+                    <li><a href="categorie-best.html">Best-seller</a></li>
                     <li><a href="categorie-soldes.html">Soldes</a></li>
                     <li><a href="categorie-parfums.html">Parfums</a></li>
                     <li><a href="categorie-corps.html">Corps</a></li>
@@ -50,17 +50,25 @@
         </div>
     </header>
 
-    <nav class="breadcrumb">
-        <a href="index.html">
-            <img src="images/icones/home.png" alt="Homepage">
-        </a> / <span>Corps</span>
-    </nav>
+    <div class="category-banner">
+        <nav class="breadcrumb">
+            <a href="index.html">
+                <img src="images/icones/home.png" alt="Homepage">
+            </a> / <span>Corps</span>
+        </nav>
+        <h1 class="category-title"> Notre gamme pour le corps</h1>
+        <p class="category-description">
+            Découvrez notre gamme de soins pour le corps, alliant qualité et bien-être. <br>
+            Plus de 100 produits conçus pour nourrir, hydrater et sublimer votre peau. <br>
+            Des crèmes riches aux gommages doux, offrez-vous une expérience sensorielle inoubliable.
+        </p>
+    </div>
     
     
     <!-- Contenu de la page des parfums -->
     <main id="products-main">
         <section class="filters">
-            <label for="sort-by">Trier par :</label>
+            <img src="images/icones/filtre-horizontal.png" alt="Trier par" class="sort-icon"> <!-- Remplacez 'sort-icon.png' par le nom de votre image -->
             <select id="sort-by">
                 <option value="default">-- Sélectionner --</option>
                 <option value="alpha-asc">Ordre alphabétique (A-Z)</option>
@@ -73,9 +81,11 @@
         <section class="products">
             <!-- Produit 1 -->
             <div class="product-card" id="product-1">
+                <div class="product-tag vegan">Vegan</div>
+                <div class="product-tag vegan">Vegan</div>
                 <img src="images/produits/corps/image-gelee-jelly-jamboree.jpg" alt="Jelly jamboree" class="product-image">
                 <h2 class="product-title">Jelly Jamboree</h2>
-                <p class="product-description">Gelée rafraichissante</p>
+                <p class="product-description">Gelée rafraichissante 30ml</p>
                 <p class="product-price">5,90 €</p>
                 <div class="product-buttons">
                     <button class="btn-favorite" data-product-id="1">
@@ -91,7 +101,7 @@
             <div class="product-card" id="product-2">
                 <img src="images/produits/corps/image-corps-bulle-bain-de-jasmin.jpg" alt="Bulle de jasmin" class="product-image">
                 <h2 class="product-title">Bulle de jasmin</h2>
-                <p class="product-description">Bombe de bain</p>
+                <p class="product-description">Bombe de bain 50gr</p>
                 <p class="product-price">1,95 €</p>
                 <div class="product-buttons">
                     <button class="btn-favorite" data-product-id="2">
@@ -105,7 +115,7 @@
             <div class="product-card" id="product-3">
                 <img src="images/produits/corps/image-brume-corps-fizz-fresh.jpg" alt="Fizz and Fresh" class="product-image">
                 <h2 class="product-title">Fizz and fresh</h2>
-                <p class="product-description">Brume pour le corps</p>
+                <p class="product-description">Brume pour le corps 30ml</p>
                 <p class="product-price">5,90 €</p>
                 <div class="product-buttons">
                     <button class="btn-favorite" data-product-id="3">
@@ -117,9 +127,10 @@
                 </div>     
             </div>
             <div class="product-card" id="product-4">
+                <div class="product-tag vegan">Vegan</div>
                 <img src="images/produits/corps/image-corps-gel-douche-tropical-twist.jpg" alt="Tropical twist" class="product-image">
                 <h2 class="product-title">Tropial twist</h2>
-                <p class="product-description">Gel douche</p>
+                <p class="product-description">Gel douche 50ml</p>
                 <p class="product-price">4,90 €</p>
                 <div class="product-buttons">
                     <button class="btn-favorite" data-product-id="4">
@@ -130,10 +141,12 @@
                     </button>
                 </div>
             </div>
+            <a href="fiche-produit-creme-mains-zeste-de-fun.html" class="product-link"> 
             <div class="product-card" id="product-4">
+                <div class="product-tag hot-sale">Best-seller </div>
                 <img src="images/produits/corps/image-creme-mains-zeste-de-fun.jpg" alt="Zeste de fun" class="product-image">
                 <h2 class="product-title">Zeste de fun</h2>
-                <p class="product-description">Crème pour les mains</p>
+                <p class="product-description">Crème pour les mains 10ml</p>
                 <p class="product-price">4,90 €</p>
                 <div class="product-buttons">
                     <button class="btn-favorite" data-product-id="1">
@@ -144,6 +157,7 @@
                     </button>
                 </div>
             </div>
+            </a>
             <!-- Ajoutez d'autres fiches produits ici -->
         </section>
     </main>
