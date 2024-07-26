@@ -129,14 +129,30 @@ header {
     background-color: #555;
 }
 
+/* Style pour le rectangle de la catégorie */
+.category-banner {
+    width: 100%; /* Prend toute la largeur de la page */
+    background: linear-gradient(to right, #F4C430, #D5702B); /* Dégradé de gauche à droite */
+    padding: 30px 0; /* Espacement vertical */
+    text-align: left; /* Alignement à gauche */
+}
+
+.category-title {
+    font-family: 'Gotham', serif; /* Police DM Serif Display */
+    font-size: 30px; /* Taille de la police */
+    margin: 0; /* Supprime les marges par défaut */
+    padding-left: 20px; /* Espace à gauche */
+    color: #222222; /* Couleur du texte */
+}
+
 /* Style pour le fil d'Ariane */
 .breadcrumb {
     font-family: 'Gotham', sans-serif;
     font-size: 14px;
     margin: 10px 20px; /* Espace autour du fil d'Ariane */
     padding: 10px;
-    background-color: #f9f9f9; /* Fond léger */
-    border-radius: 4px;
+    background-color: #F4EFE9; /* Fond léger */
+    border-radius: 3px;
     display: inline-block; /* Alignement en ligne */
 }
 
