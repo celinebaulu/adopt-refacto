@@ -361,6 +361,35 @@ header {
     background-color: rgba(219, 179, 23, 0.8); /* Fond semi-transparent bleu */
 }
 
+.product-price {
+    font-family: 'Gotham', sans-serif; /* Applique la police Gotham */
+    font-size: 13px; /* Taille du texte */
+    text-transform: uppercase; /* Transforme le texte en majuscules */
+    margin: 10px 0; /* Marges autour du titre */
+}
+
+.old-price {
+    text-decoration: line-through; /* Barré */
+    color: red; /* Couleur du prix barré */
+    margin-right: 5px; /* Espacement avec le nouveau prix */
+}
+
+.new-price {
+    color: #D5702B; /* Couleur du nouveau prix */
+    font-weight: bold; /* Gras pour le nouveau prix */
+}
+
+/* Style pour le tag soldes */
+.product-tag.sale {
+    background-color: rgba(177, 32, 119, 0.8); /* Fond semi-transparent rouge */
+}
+
+.product-tag.sale-next {
+    background-color: rgba(177, 32, 119, 0.8); /* Fond semi-transparent rouge */
+    margin-left: 70px;
+}
+
+
 /* Style pour le bouton "Ajouter aux favoris" avec une image */
 .btn-favorite {
     display: inline-flex;
