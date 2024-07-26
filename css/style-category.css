@@ -133,7 +133,7 @@ header {
 .category-banner {
     width: 100%; /* Prend toute la largeur de la page */
     background: linear-gradient(to right, #F4C430, #D5702B); /* Dégradé de gauche à droite */
-    padding: 30px 0; /* Espacement vertical */
+    padding: 10px 0; /* Espacement vertical */
     text-align: left; /* Alignement à gauche */
 }
 
@@ -141,7 +141,18 @@ header {
     font-family: 'Gotham', serif; /* Police DM Serif Display */
     font-size: 30px; /* Taille de la police */
     margin: 0; /* Supprime les marges par défaut */
-    padding-left: 20px; /* Espace à gauche */
+    padding-left: 30px; /* Espace à gauche */
+    color: #222222; /* Couleur du texte */
+}
+
+
+.category-description {
+    display: flex;
+    flex-direction: column; /* Colonne pour empiler les éléments */
+    align-items: flex-start; /* Aligner à gauche */
+    margin-bottom: 20px; /* Ajustez cette marge pour réduire l'espace entre les éléments */
+    font-size: 13px;
+    padding-left: 30px; /* Espace à gauche */
     color: #222222; /* Couleur du texte */
 }
 
@@ -151,14 +162,14 @@ header {
     font-size: 14px;
     margin: 10px 20px; /* Espace autour du fil d'Ariane */
     padding: 10px;
-    background-color: #F4EFE9; /* Fond léger */
+    background-color: transparent; /* Fond léger */
     border-radius: 3px;
     display: inline-block; /* Alignement en ligne */
 }
 
 .breadcrumb a {
     text-decoration: none;
-    color: #333;
+    color: #070707;
     margin-right: 5px;
     display: inline-flex;
     align-items: center; /* Aligne l'icône au centre verticalement */
@@ -175,7 +186,7 @@ header {
 }
 
 .breadcrumb span {
-    color: #666; /* Couleur pour la page actuelle */
+    color: #a84545; /* Couleur pour la page actuelle */
 }
 
 
