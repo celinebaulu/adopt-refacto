@@ -357,6 +357,9 @@ header {
     background-color: rgba(0, 128, 0, 0.8); /* Fond semi-transparent bleu */
 }
 
+.product-tag.new {
+    background-color: rgba(219, 179, 23, 0.8); /* Fond semi-transparent bleu */
+}
 
 /* Style pour le bouton "Ajouter aux favoris" avec une image */
 .btn-favorite {
