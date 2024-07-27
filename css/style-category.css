@@ -167,6 +167,7 @@ header {
     background-color: transparent; /* Fond léger */
     border-radius: 3px;
     display: inline-block; /* Alignement en ligne */
+    text-transform: uppercase;
 }
 
 .breadcrumb a {
@@ -175,6 +176,7 @@ header {
     margin-right: 5px;
     display: inline-flex;
     align-items: center; /* Aligne l'icône au centre verticalement */
+    text-transform: uppercase;
 }
 
 .breadcrumb img {
@@ -188,7 +190,8 @@ header {
 }
 
 .breadcrumb span {
-    color: #a84545; /* Couleur pour la page actuelle */
+    text-decoration: underline;
+    margin-left: 8px;
 }
 
 
