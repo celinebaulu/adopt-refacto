@@ -165,6 +165,23 @@ header {
     margin-left: 8px;
 }
 
+.category-banner {
+    width: 100%; /* Prend toute la largeur de la page */
+    background: linear-gradient(to right, #F4C430, #4a4491); /* Dégradé de gauche à droite */
+    padding: 5px 0; /* Espacement vertical */
+    text-align: left; /* Alignement à gauche */
+}
+
+.category-title {
+    font-family: 'Gotham', sans-serif;
+    font-size: 30px; /* Taille de la police */
+    margin: 0; /* Supprime les marges par défaut */
+    padding-left: 30px; /* Espace à gauche */
+    color: #222222; /* Couleur du texte */
+    text-transform: uppercase;
+}
+
+
 /* Styles pour le conteneur principal */
 .product-container {
     display: flex;
