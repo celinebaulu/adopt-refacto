@@ -1,0 +1,354 @@
+/* Styles généraux pour le body */
+body {
+    margin: 0;
+    font-family: 'Gotham', sans-serif;
+    color: #222222;
+    background-color: #F4EFE9;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style pour le bandeau */
+.bandeau {
+    background-color: #49583C;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Style pour le contenu du bandeau */
+.bandeau-message {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Style pour le header */
+header {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.main-nav {
+    flex: 1;
+    margin-left: 50px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin: 0 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav-menu a:hover {
+    color: #ff0000;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.header-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover; /* Assure que les images sont bien dimensionnées sans déformation */
+}
+
+/* Assurez-vous que les icônes ont un espace suffisant */
+.header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style pour la barre de recherche */
+.search-bar {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search-bar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Style pour le fil d'Ariane */
+.breadcrumb {
+    font-family: 'Gotham', sans-serif;
+    font-size: 14px;
+    margin: 10px 20px; /* Espace autour du fil d'Ariane */
+    padding: 10px;
+    background-color: transparent; /* Fond léger */
+    border-radius: 3px;
+    display: inline-block; /* Alignement en ligne */
+    text-transform: uppercase;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #070707;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center; /* Aligne l'icône au centre verticalement */
+    text-transform: uppercase;
+}
+
+.breadcrumb img {
+    width: 16px; /* Largeur de l'icône */
+    height: 16px; /* Hauteur de l'icône */
+    margin-right: 5px; /* Espace entre l'icône et le texte suivant */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+.breadcrumb span {
+    text-decoration: underline;
+    margin-left: 8px;
+}
+
+/* Styles pour le conteneur principal */
+.product-container {
+    display: flex;
+    flex-direction: row; /* Changed to row to place details to the right */
+    padding: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: auto;
+    max-width: 600px;
+}
+
+.images-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.small-images {
+    display: flex;
+    flex-direction: column; /* Aligne les images en colonne */
+    gap: 10px;
+    justify-content: flex-end; /* Alignement au bas de la main-image */
+    align-items: center;
+}
+
+.small-image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.main-image-container {
+    width: 500px;
+    height: 500px;
+    margin-left: 10px;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-details {
+    max-width: 600px;
+    padding: 20px;
+    flex-grow: 1;
+    margin-left: 20px; /* Espace entre les images et les détails */
+}
+
+.product-name {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Style pour le footer */
+.site-footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-info, .footer-links, .footer-social {
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Media Queries pour la réactivité */
+@media (max-width: 599px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .small-images {
+        display: flex;
+        flex-direction: column; /* Assure que les images sont en colonne */
+        gap: 10px;
+        justify-content: flex-end; /* Alignement au bas de la main-image */
+        align-items: center;
+    }
+
+    .small-image {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .main-image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-details {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (min-width: 600px) {
+    .product-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .product-images {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .small-images {
+        flex-direction: column; /* Assure que les images sont en colonne */
+        gap: 10px;
+        justify-content: flex-end; /* Alignement au bas de la main-image */
+        align-items: center;
+        margin-top: auto;
+    }
+
+    .small-image {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .main-image-container {
+        width: 500px;
+        height: 500px;
+    }
+
+    .product-details {
+        text-align: left;
+        margin-left: 20px; /* Adds space between images and details */
+    }
+}

@@ -140,11 +140,12 @@ header {
 }
 
 .category-title {
-    font-family: 'Gotham', serif; /* Police DM Serif Display */
+    font-family: 'Gotham', sans-serif;
     font-size: 30px; /* Taille de la police */
     margin: 0; /* Supprime les marges par défaut */
     padding-left: 30px; /* Espace à gauche */
     color: #222222; /* Couleur du texte */
+    text-transform: uppercase;
 }
 
 
@@ -373,12 +374,12 @@ header {
 
 .old-price {
     text-decoration: line-through; /* Barré */
-    color: red; /* Couleur du prix barré */
+    color: rgb(0, 0, 0); /* Couleur du prix barré */
     margin-right: 5px; /* Espacement avec le nouveau prix */
 }
 
 .new-price {
-    color: #D5702B; /* Couleur du nouveau prix */
+    color: #ff0000; /* Couleur du nouveau prix */
     font-weight: bold; /* Gras pour le nouveau prix */
 }
 
