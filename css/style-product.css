@@ -322,12 +322,61 @@ header {
     border-color: #F4C430; /* Couleur de la bordure au survol pour correspondre à la couleur de fond */
 }
 
+.product-quantity {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.product-quantity label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #49583C;
+}
+
+.product-quantity select {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.product-title {
+    font-family: 'Gotham', sans-serif; /* Applique la police Gotham */
+    font-size: 16px; /* Taille du texte */
+    text-transform: uppercase; /* Transforme le texte en majuscules */
+    margin: 10px 0; /* Marges autour du titre */
+}
+
+/* Style pour la description du produit */
+.product-description-other {
+    font-family: 'Gotham', sans-serif;
+    font-size: 14px; /* Taille du texte moins gros que le titre */
+    text-transform: uppercase; /* Texte en majuscules */
+    text-align: center; /* Centré */
+    margin: 0px 0; /* Espace au-dessus et en-dessous */
+    font-weight: bold;
+    color: #D5702B; /* Couleur du texte */
+}
+
+.product-price {
+    font-family: 'Gotham', sans-serif; /* Applique la police Gotham */
+    font-size: 16px; /* Taille du texte */
+    text-transform: uppercase; /* Transforme le texte en majuscules */
+    margin: 10px 0; /* Marges autour du titre */
+}
+
 /* Style pour les produits associés */
 .related-products-container {
     max-width: 1200px;
     margin: 50px auto;
     padding: 0 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
+
 
 .related-products-container h2 {
     margin-bottom: 20px;
@@ -357,6 +406,10 @@ header {
 .product-price {
     color: #49583C;
     font-weight: bold;
+}
+
+.related-product a {
+    text-decoration: none;
 }
 
 /* Style pour le footer */
