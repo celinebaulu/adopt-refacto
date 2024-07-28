@@ -236,9 +236,9 @@ header {
 
 .product-buttons {
     display: flex;
-    align-items: center;
+    align-items: left;
     gap: 10px; /* Espace entre les boutons */
-    justify-content: center; /* Centre les boutons horizontalement */
+    justify-content: left; /* Centre les boutons horizontalement */
     margin-top: 10px; /* Espace au-dessus des boutons, optionnel */
 }
 
@@ -406,8 +406,8 @@ header {
     }
 
     .small-image {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
         object-fit: cover;
         cursor: pointer;
     }
@@ -418,8 +418,8 @@ header {
     }
 
     .product-details {
-        text-align: center;
-        width: 100%;
+        text-align: left;
+        width: 90%;
         align-self: center; /* Centrer les détails sur les petits écrans */
     }
 }
@@ -457,20 +457,20 @@ header {
     }
 
     .small-image {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
         object-fit: cover;
         cursor: pointer;
     }
 
     .main-image-container {
-        width: 500px;
-        height: 500px;
+        width: 400px;
+        height: 400px;
     }
 
     .product-details {
         text-align: left;
-        margin-left: 20px; /* Adds space between images and details */
+        margin-left: 10px; /* Adds space between images and details */
         align-self: center; /* Centre les détails verticalement */
     }
 }
