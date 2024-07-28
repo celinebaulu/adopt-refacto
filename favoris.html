@@ -85,5 +85,26 @@
 
     <script src="js/main.js"></script>
     <script src="js/favorites.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const favoritesContainer = document.getElementById('favorites-container');
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    
+            favorites.forEach(favorite => {
+                const favoriteItem = document.createElement('div');
+                favoriteItem.classList.add('favorite-item');
+    
+                favoriteItem.innerHTML = `
+                    <img src="${favorite.image}" alt="${favorite.name}">
+                    <h2>${favorite.name}</h2>
+                    <p>${favorite.price} €</p>
+                `;
+    
+                favoritesContainer.appendChild(favoriteItem);
+            });
+        });
+    </script>
+    
 </body>
 </html>
