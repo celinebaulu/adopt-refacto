@@ -56,6 +56,7 @@
             <a href="../../index.html">
                 <img src="../../images/icones/home.png">
             </a> /  <a href="../../categorie-maquillage.html"> maquillage</a> / <span> Mascara nuit étoilée</span>
+        </nav>
     </div>
 
     <!-- Conteneur principal du produit -->
@@ -63,11 +64,12 @@
         <div class="product-images">
             <div class="images-wrapper">
                 <div class="small-images">
-                    <img src="../../images/produits/maquillage/fiche-produit-mascara/mascara-image-min-1-1.jpg" alt="Small Image 1" class="small-image">
-                    <img src="../../images/produits/maquillage/fiche-produit-mascara/masacara-image-min-2.jpg" alt="Small Image 2" class="small-image">
+                    <img src="../../images/produits/maquillage/fiche-produit-mascara/mascara-image-min-1-1.jpg" alt="Small Image 1" class="small-image" onclick="changeImage(this)">
+                    <img src="../../images/produits/maquillage/fiche-produit-mascara/masacara-image-min-2.jpg" alt="Small Image 2" class="small-image" onclick="changeImage(this)">
+                    <img src="../../images/produits/maquillage/fiche-produit-mascara/mascara-image-principale.jpg" alt="Small Image 2" class="small-image" onclick="changeImage(this)">
                 </div>
                 <div class="main-image-container">
-                    <img src="../../images/produits/maquillage/fiche-produit-mascara/mascara-image-principale.jpg" alt="Main Image" class="main-image">
+                    <img src="../../images/produits/maquillage/fiche-produit-mascara/mascara-image-principale.jpg" alt="Main Image" class="main-image" id="mainImage">
                 </div>
             </div>
         </div>
@@ -86,37 +88,37 @@
                 <label for="quantity">Quantité :</label>
                 <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
             </div>
-                <div class="product-buttons">
-                    <button class="btn-favorite" data-product-id="1">
-                        <img src="../../images/icones/coeur.png" alt="Ajouter aux favoris">
-                    </button>
-                    <button class="btn-add-to-cart" data-product-id="1">
-                        <img src="../../images/icones/panier.png" alt="Acheter maintenant">
-                    </button>
-                </div>  
+            <div class="product-buttons">
+                <button class="btn-favorite" data-product-id="1">
+                    <img src="../../images/icones/coeur.png" alt="Ajouter aux favoris">
+                </button>
+                <button class="btn-add-to-cart" data-product-id="1">
+                    <img src="../../images/icones/panier.png" alt="Acheter maintenant">
+                </button>
             </div>
         </div>
-        <div class="related-products-container">
-            <h2>D'autres clients ont également achetés :</h2>
-            <div class="related-products">
-                <div class="related-product">
-                    <img src="../../images/produits/corps/image-corps-bulle-bain-de-jasmin.jpg" alt="Produit 1">
-                    <h2 class="product-title">Bulle de jasmin</h2>
-                    <p class="product-description">Bombe de bain 50gr</p>
-                    <p class="product-price">1,95 €</p>
-                </div>
-                <div class="related-product">
-                    <img src="../../images/produits/visage/image-visage-gelée-nettoyante.jpg" alt="Produit 2">
-                    <h2 class="product-title">Gelée nettoyante</h2>
-                    <p class="product-description">Bombe de bain 50gr</p>
-                    <p class="product-price">1,95 €</p>
-                </div>
-                <div class="related-product">
-                    <img src="../../images/produits/parfums/parfum-ginger-splash.jpg" alt="Produit 3">
-                    <h2 class="product-title">Gelée nettoyante</h2>
-                    <p class="product-description">Bombe de bain 50gr</p>
-                    <p class="product-price">1,95 €</p>
-                </div>
+    </div>
+
+    <div class="related-products-container">
+        <h2>D'autres clients ont également achetés :</h2>
+        <div class="related-products">
+            <div class="related-product">
+                <img src="../../images/produits/corps/image-corps-bulle-bain-de-jasmin.jpg" alt="Produit 1">
+                <h2 class="product-title">Bulle de jasmin</h2>
+                <p class="product-description">Bombe de bain 50gr</p>
+                <p class="product-price">1,95 €</p>
+            </div>
+            <div class="related-product">
+                <img src="../../images/produits/visage/image-visage-gelée-nettoyante.jpg" alt="Produit 2">
+                <h2 class="product-title">Gelée nettoyante</h2>
+                <p class="product-description">Bombe de bain 50gr</p>
+                <p class="product-price">1,95 €</p>
+            </div>
+            <div class="related-product">
+                <img src="../../images/produits/parfums/parfum-ginger-splash.jpg" alt="Produit 3">
+                <h2 class="product-title">Ginger Splash</h2>
+                <p class="product-description">Parfum 30ml</p>
+                <p class="product-price">14,95 €</p>
             </div>
         </div>
     </div>
@@ -153,6 +155,11 @@
         function toggleMenu() {
             const nav = document.querySelector('.main-nav');
             nav.classList.toggle('active');
+        }
+
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = element.src;
         }
     </script>
 </body>
