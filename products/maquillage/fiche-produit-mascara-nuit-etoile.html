@@ -34,7 +34,7 @@
                 </ul>
             </nav>
             <div class="header-icons">
-                <a href="panier.html" class="header-icon">
+                <a href="../../panier.html" class="header-icon">
                     <img src="../../images/icones/panier.png" alt="Panier">
                 </a>
                 <a href="moncompte.html" class="header-icon">
@@ -60,7 +60,7 @@
     </div>
 
     <!-- Conteneur principal du produit -->
-    <div class="product-container">
+    <div class="product-container"  data-product-id="1" data-product-name="Mascara nuit étoilée" data-product-price="10.99">
         <div class="product-images">
             <div class="images-wrapper">
                 <div class="small-images">
@@ -84,6 +84,7 @@
             <p class="product-description">Offrez à vos cils une longueur et un volume spectaculaires avec le Mascara Nuit Étoilée. <br>
             Sa formule noire intense et longue tenue sublime votre regard pour un effet étoilé captivant.
             </p>
+            <p class="price"> 10,90€ </p>
             <div class="product-quantity">
     <label for="quantity">Quantité :</label>
     <select id="quantity" name="quantity">
@@ -108,6 +109,7 @@
             </div>
         </div>
     </div>
+  
 
     <div class="related-products-container">
         <h2>D'autres clients ont également achetés :</h2>
@@ -123,21 +125,78 @@
             <div class="related-product">
                 <a href="">
                 <img src="../../images/produits/visage/image-visage-gelée-nettoyante.jpg" alt="Produit 2">
-                <h2 class="product-title">Gelée nettoyante</h2>
-                <p class="product-description-other">Bombe de bain 50gr</p>
-                <p class="product-price">1,95 €</p>
+                <h2 class="product-title">Yes you glow</h2>
+                <p class="product-description-other">Gelée nettoyante 15ml</p>
+                <p class="product-price">4,90 €</p>
                 </a>
             </div>
             <div class="related-product">
                 <a href="">
                 <img src="../../images/produits/parfums/parfum-ginger-splash.jpg" alt="Produit 3">
                 <h2 class="product-title">Ginger Splash</h2>
-                <p class="product-description-other">Parfum 30ml</p>
+                <p class="product-description-other">Eau de parfum 30ml</p>
                 <p class="product-price">14,95 €</p>
                 </a>
             </div>
         </div>
     </div>
+
+    <section class="customer-reviews">
+        <h2 class="title-reviews">Quelques avis clients</h2>
+        <div class="review-container">
+            <div class="review-item">
+                <img src="../../images/profil-client/photo-alice.png" alt="Photo du client">
+                <div class="rating">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+                <div class="comment">
+                    "Ce mascara est incroyable ! Mes cils sont plus longs et plus volumineux que jamais."
+                </div>
+                <div class="customer-name">
+                    - Alice Martin
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="../../images/profil-client/photo-marie.png" alt="Photo du client">
+                <div class="rating">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                </div>
+                <div class="comment">
+                    "Très bon produit, il ne s'effrite pas et dure toute la journée."
+                </div>
+                <div class="customer-name">
+                    - Marie Dupont
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="../../images/profil-client/photo-sophie.png" alt="Photo du client">
+                <div class="rating">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9735;</span>
+                </div>
+                <div class="comment">
+                    "J'adore ce mascara ! Il donne un effet naturel tout en ajoutant du volume."
+                </div>
+                <div class="customer-name">
+                    - Sophie Lambert
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="../../images/profil-client/photo-laura.png" alt="Photo du client">
+                <div class="rating">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+                <div class="comment">
+                    "Le meilleur mascara que j'ai jamais utilisé, je le recommande vivement."
+                </div>
+                <div class="customer-name">
+                    - Laura Bernard
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -159,9 +218,9 @@
             <div class="footer-social">
                 <h3>Suivez-nous</h3>
                 <div class="social-icons">
-                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-                    <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/?locale=fr_FR" target="_blank"><img src="../../images/icones/facebook.png" alt="Facebook" class="social-icon"></a>
+                    <a href="https://x.com/?lang=fr&mx=2" target="_blank"><img src="../../images/icones/twitter.png" alt="Twitter" class="social-icon"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="../../images/icones/instagram.png" alt="Instagram" class="social-icon"></a>
                 </div>
             </div>
         </div>
@@ -177,6 +236,37 @@
             const mainImage = document.getElementById('mainImage');
             mainImage.src = element.src;
         }
+
+        ocument.getElementById('add-to-cart-btn').addEventListener('click', function() {
+        const productContainer = document.querySelector('.product-container');
+        const productId = productContainer.getAttribute('data-product-id');
+        const productName = productContainer.getAttribute('data-product-name');
+        const productPrice = parseFloat(productContainer.getAttribute('data-product-price'));
+        const productImage = document.getElementById('product-image').src;
+        const quantity = parseInt(document.getElementById('quantity').value);
+
+        const cartItem = {
+            id: productId,
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: quantity
+        };
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItemIndex = cart.findIndex(item => item.id === productId);
+
+        if (existingItemIndex >= 0) {
+            cart[existingItemIndex].quantity += quantity;
+        } else {
+            cart.push(cartItem);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('Article ajouté au panier !');
+    });
     </script>
+
+
 </body>
 </html>

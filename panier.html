@@ -45,41 +45,40 @@
     </header>
 
     <!-- Section panier -->
-    <main>
+    <body>
         <div class="cart-container">
             <h1>Votre Panier</h1>
-            <div class="cart-items">
-                <!-- Article 1 -->
-                <div class="cart-item">
-                    <img src="images/product1.png" alt="Produit 1" class="cart-item-image">
-                    <div class="cart-item-details">
-                        <h2 class="cart-item-title">Nom du Produit 1</h2>
-                        <p class="cart-item-price">25,00 €</p>
-                        <input type="number" value="1" min="1" class="cart-item-quantity">
-                        <button class="remove-item-button">Supprimer</button>
-                    </div>
-                </div>
-                <!-- Article 2 -->
-                <div class="cart-item">
-                    <img src="images/product2.png" alt="Produit 2" class="cart-item-image">
-                    <div class="cart-item-details">
-                        <h2 class="cart-item-title">Nom du Produit 2</h2>
-                        <p class="cart-item-price">15,00 €</p>
-                        <input type="number" value="2" min="1" class="cart-item-quantity">
-                        <button class="remove-item-button">Supprimer</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cart-summary">
-                <h2>Résumé de la Commande</h2>
-                <p class="summary-item">Sous-total : <span>40,00 €</span></p>
-                <p class="summary-item">Frais de livraison : <span>5,00 €</span></p>
-                <p class="summary-total">Total : <span>45,00 €</span></p>
-                <button class="checkout-button">Procéder au Paiement</button>
-            </div>
+            <div id="cart-items"></div>
+            <div id="total-price"></div>
         </div>
-    </main>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const cartItemsContainer = document.getElementById('cart-items');
+                const totalPriceContainer = document.getElementById('total-price');
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                let total = 0;
+    
+                cart.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <h3>${item.name}</h3>
+                            <p>Prix: ${item.price} €</p>
+                            <p>Quantité: ${item.quantity}</p>
+                            <p>Total: ${(item.price * item.quantity).toFixed(2)} €</p>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemElement);
+                    total += item.price * item.quantity;
+                });
+    
+                totalPriceContainer.innerHTML = `<h2>Total: ${total.toFixed(2)} €</h2>`;
+            });
+        </script>
+    </body>
 
     <!-- Footer -->
     <footer class="site-footer">
