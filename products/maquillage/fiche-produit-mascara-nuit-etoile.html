@@ -37,10 +37,10 @@
                 <a href="../../panier.html" class="header-icon">
                     <img src="../../images/icones/panier.png" alt="Panier">
                 </a>
-                <a href="moncompte.html" class="header-icon">
+                <a href="../../moncompte.html" class="header-icon">
                     <img src="../../images/icones/utilisateur.png" alt="Mon compte">
                 </a>
-                <a href="favoris.html" class="header-icon">
+                <a href="../../favoris.html" class="header-icon">
                     <img src="../../images/icones/coeur.png" alt="Favoris">
                 </a>
             </div>
@@ -60,16 +60,16 @@
     </div>
 
     <!-- Conteneur principal du produit -->
-    <div class="product-container"  data-product-id="1" data-product-name="Mascara nuit étoilée" data-product-price="10.99">
+    <div class="product-container" data-product-id="1" data-product-name="Mascara nuit étoilée" data-product-price="10.99">
         <div class="product-images">
             <div class="images-wrapper">
                 <div class="small-images">
                     <img src="../../images/produits/maquillage/fiche-produit-mascara/mascara-image-min-1-1.jpg" alt="Small Image 1" class="small-image" onclick="changeImage(this)">
                     <img src="../../images/produits/maquillage/fiche-produit-mascara/masacara-image-min-2.jpg" alt="Small Image 2" class="small-image" onclick="changeImage(this)">
-                    <img src="../../images/produits/maquillage/fiche-produit-mascara/mascara-image-principale.jpg" alt="Small Image 2" class="small-image" onclick="changeImage(this)">
+                    <img src="../../images/produits/maquillage/fiche-produit-mascara/mascara-image-principale.jpg" alt="Small Image 3" class="small-image" onclick="changeImage(this)">
                 </div>
                 <div class="main-image-container">
-                    <img src="../../images/produits/maquillage/fiche-produit-mascara/mascara-image-principale.jpg" alt="Main Image" class="main-image" id="mainImage">
+                    <img src="../../images/produits/maquillage/fiche-produit-mascara/mascara-image-principale.jpg" alt="Main Image" class="main-image" id="product-image">
                 </div>
             </div>
         </div>
@@ -84,32 +84,31 @@
             <p class="product-description">Offrez à vos cils une longueur et un volume spectaculaires avec le Mascara Nuit Étoilée. <br>
             Sa formule noire intense et longue tenue sublime votre regard pour un effet étoilé captivant.
             </p>
-            <p class="price"> 10,90€ </p>
+            <p class="price">10,90€</p>
             <div class="product-quantity">
-    <label for="quantity">Quantité :</label>
-    <select id="quantity" name="quantity">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-    </select>
-</div>
+                <label for="quantity">Quantité :</label>
+                <select id="quantity" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
             <div class="product-buttons">
-                <button class="btn-favorite" data-product-id="1">
+                <button class="btn-favorite" id="btn-add-to-favorites">
                     <img src="../../images/icones/coeur.png" alt="Ajouter aux favoris">
                 </button>
-                <button class="btn-add-to-cart" data-product-id="1">
+                <button class="btn-add-to-cart" id="btn-add-to-cart">
                     <img src="../../images/icones/panier.png" alt="Acheter maintenant">
                 </button>
             </div>
         </div>
     </div>
-  
 
     <div class="related-products-container">
         <h2>D'autres clients ont également achetés :</h2>
@@ -195,9 +194,6 @@
         </div>
     </section>
     
-    
-    
-
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-content">
@@ -233,40 +229,66 @@
         }
 
         function changeImage(element) {
-            const mainImage = document.getElementById('mainImage');
+            const mainImage = document.getElementById('product-image');
             mainImage.src = element.src;
         }
 
-        ocument.getElementById('add-to-cart-btn').addEventListener('click', function() {
-        const productContainer = document.querySelector('.product-container');
-        const productId = productContainer.getAttribute('data-product-id');
-        const productName = productContainer.getAttribute('data-product-name');
-        const productPrice = parseFloat(productContainer.getAttribute('data-product-price'));
-        const productImage = document.getElementById('product-image').src;
-        const quantity = parseInt(document.getElementById('quantity').value);
+        // Ajouter au panier
+        document.getElementById('btn-add-to-cart').addEventListener('click', function() {
+            const productContainer = document.querySelector('.product-container');
+            const productId = productContainer.getAttribute('data-product-id');
+            const productName = productContainer.getAttribute('data-product-name');
+            const productPrice = parseFloat(productContainer.getAttribute('data-product-price'));
+            const productImage = document.getElementById('product-image').src;
+            const quantity = parseInt(document.getElementById('quantity').value);
 
-        const cartItem = {
-            id: productId,
-            name: productName,
-            price: productPrice,
-            image: productImage,
-            quantity: quantity
-        };
+            const cartItem = {
+                id: productId,
+                name: productName,
+                price: productPrice,
+                image: productImage,
+                quantity: quantity
+            };
 
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const existingItemIndex = cart.findIndex(item => item.id === productId);
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItemIndex = cart.findIndex(item => item.id === productId);
 
-        if (existingItemIndex >= 0) {
-            cart[existingItemIndex].quantity += quantity;
-        } else {
-            cart.push(cartItem);
-        }
+            if (existingItemIndex >= 0) {
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                cart.push(cartItem);
+            }
 
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert('Article ajouté au panier !');
-    });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Article ajouté au panier !');
+        });
+
+        // Ajouter aux favoris
+        document.getElementById('btn-add-to-favorites').addEventListener('click', function() {
+            const productContainer = document.querySelector('.product-container');
+            const productId = productContainer.getAttribute('data-product-id');
+            const productName = productContainer.getAttribute('data-product-name');
+            const productPrice = parseFloat(productContainer.getAttribute('data-product-price'));
+            const productImage = document.getElementById('product-image').src;
+
+            const favoriteItem = {
+                id: productId,
+                name: productName,
+                price: productPrice,
+                image: productImage
+            };
+
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            const existingItemIndex = favorites.findIndex(item => item.id === productId);
+
+            if (existingItemIndex >= 0) {
+                alert('Ce produit est déjà dans vos favoris.');
+            } else {
+                favorites.push(favoriteItem);
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+                alert('Article ajouté aux favoris !');
+            }
+        });
     </script>
-
-
 </body>
 </html>
