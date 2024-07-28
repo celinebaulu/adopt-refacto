@@ -220,6 +220,7 @@ header {
     padding: 20px;
     flex-grow: 1;
     margin-left: 20px; /* Espace entre les images et les détails */
+    align-self: flex-end; /* Aligne les détails en bas */
 }
 
 .product-name {
@@ -313,6 +314,7 @@ header {
     .product-details {
         text-align: center;
         width: 100%;
+        align-self: center; /* Centrer les détails sur les petits écrans */
     }
 }
 
@@ -350,5 +352,6 @@ header {
     .product-details {
         text-align: left;
         margin-left: 20px; /* Adds space between images and details */
+        align-self: flex-end; /* Aligne les détails en bas */
     }
 }
