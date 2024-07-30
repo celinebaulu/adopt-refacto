@@ -263,6 +263,16 @@ header {
     font-size: 16px;
 }
 
+.old-price {
+    text-decoration: line-through; /* Barré */
+    color: rgb(0, 0, 0); /* Couleur du prix barré */
+    margin-right: 5px; /* Espacement avec le nouveau prix */
+}
+
+.new-price {
+    color: #ff0000; /* Couleur du nouveau prix */
+    font-weight: bold; /* Gras pour le nouveau prix */
+}
 /* Style pour les boutons */
 
 .product-buttons {
