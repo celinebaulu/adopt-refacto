@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfum monoï party - Adopt - Parfums français</title>
+    <link rel="stylesheet" href="../../css/style-product.css">
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Bandeau -->
+    <div class="bandeau">
+        <div class="bandeau-message">
+            Livraison offerte dès 30€ !
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo-link">
+                <img src="../../images/logo-principal.png" alt="logo principal adopt" class="logo">
+            </a>
+            <button class="burger-menu" onclick="toggleMenu()">☰</button>
+            <nav class="main-nav" id="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="../../categorie-best.html">Best-seller</a></li>
+                    <li><a href="../../categorie-soldes.html">Soldes</a></li>
+                    <li><a href="../../categorie-parfums.html">Parfums</a></li>
+                    <li><a href="../../categorie-corps.html">Corps</a></li>
+                    <li><a href="../../categorie-visage.html">Visage</a></li>
+                    <li><a href="../../categorie-maquillage.html">Maquillage</a></li>
+                    <li><a href="../../categorie-nouveautes.html">Nouveautés</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="../../panier.html" class="header-icon">
+                    <img src="../../images/icones/panier.png" alt="Panier">
+                </a>
+                <a href="../../moncompte.html" class="header-icon">
+                    <img src="../../images/icones/utilisateur.png" alt="Mon compte">
+                </a>
+                <a href="../../favoris.html" class="header-icon">
+                    <img src="../../images/icones/coeur.png" alt="Favoris">
+                </a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher...">
+            <button type="submit" aria-label="Lancer la recherche">Recherche</button>
+        </div>
+    </header>
+
+    <div class="category-banner">
+        <nav class="breadcrumb">
+            <a href="../../index.html">
+                <img src="../../images/icones/home.png">
+            </a> /  <a href="../../categorie-maquillage.html"> parfums</a> / <span> Monoi party</span>
+        </nav>
+    </div>
+
+    <!-- Conteneur principal du produit -->
+    <div class="product-container" data-product-id="11" data-product-name="Parfum monoi party" data-product-price="11.90">
+        <div class="product-images">
+            <div class="images-wrapper">
+                <div class="small-images">
+                   <img src="../../images/produits/parfums/fiche-produit-parfum-monoi/monoi-image-min-1.jpg" alt="Small Image 1" class="small-image" onclick="changeImage(this)">
+                    <img src="../../images/produits/parfums/fiche-produit-parfum-monoi/monoi-image-min-2.jpg" alt="Small Image 2" class="small-image" onclick="changeImage(this)">-->
+                    <img src="../../images/produits/parfums/fiche-produit-parfum-monoi/monoi-image-principale.jpg" alt="Small Image 3" class="small-image" onclick="changeImage(this)">
+                </div>
+                <div class="main-image-container">
+                    <img src="../../images/produits/parfums/fiche-produit-parfum-monoi/monoi-image-principale.jpg" alt="Main Image" class="main-image" id="product-image">
+                </div>
+            </div>
+        </div>
+        <div class="product-details">
+            <h1 class="product-name">Parfum Monoï Party</h1>
+            <div class="product-rating">
+                <span class="stars">
+                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                </span>
+                <span class="reviews">(41 avis)</span>
+            </div>
+            <p class="product-description">Sublimez votre regard avec le crayon noir Regard de minuit.<br>
+                Sa texture crémeuse et intense glisse facilement pour une application précise et un résultat longue tenue.
+            </p>
+            <p class="price">11.90€</p>
+            <div class="product-quantity">
+                <label for="quantity">Quantité :</label>
+                <select id="quantity" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
+            <div class="product-buttons">
+                <button class="btn-favorite" id="btn-add-to-favorites">
+                    <img src="../../images/icones/coeur.png" alt="Ajouter aux favoris">
+                </button>
+                <button class="btn-add-to-cart" id="btn-add-to-cart">
+                    <img src="../../images/icones/panier.png" alt="Acheter maintenant">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="related-products-container">
+        <h2>D'autres clients ont également achetés :</h2>
+        <div class="related-products">
+            <div class="related-product">
+                <a href="../corps/fiche-produit-jelly-jamboree.html">
+                <img src="../../images/produits/corps/image-gelee-jelly-jamboree.jpg" alt="Produit 1">
+                <h2 class="product-title">Jelly Jamboree</h2>
+                <p class="product-description-other">Gelée rafraîchissante 30ml</p>
+                <p class="product-price">5,90 €</p>
+                </a>
+            </div>
+            <div class="related-product">
+                <a href="../visage/fiche-produit-baume-yeux.html">
+                <img src="../../images/produits/visage/image-visage-baume-yeux-repulp.jpg" alt="Produit 2">
+                <h2 class="product-title">Repulp party</h2>
+                <p class="product-description-other">Baume pour les yeux 15ml</p>
+                <p class="product-price">10,90 €</p>
+                </a>
+            </div>
+            <div class="related-product">
+                <a href="../corps/fiche-produit-brume-corps-fizz-fresh.html">
+                <img src="../../images/produits/corps/image-brume-corps-fizz-fresh.jpg" alt="Produit 3">
+                <h2 class="product-title">Fizz and fresh</h2>
+                <p class="product-description-other">Brume pour le corps 30ml</p>
+                <p class="product-price">5,90 €</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="customer-reviews">
+        <h2 class="title-reviews">Quelques avis clients</h2>
+        <div class="review-container">
+            <div class="review-item">
+                <img src="../../images/profil-client/photo-alice.png" alt="Photo du client">
+                <div class="rating">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+                <div class="comment">
+                    "Ce crayon est incroyable ! La couleur noire est intense et la texture est crémeuse."
+                </div>
+                <div class="customer-name">
+                    - Alice Martin
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="../../images/profil-client/photo-marie.png" alt="Photo du client">
+                <div class="rating">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                </div>
+                <div class="comment">
+                    "Très bon produit, il s'applique facilement et tient toute la journée."
+                </div>
+                <div class="customer-name">
+                    - Marie Dupont
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="../../images/profil-client/photo-sophie.png" alt="Photo du client">
+                <div class="rating">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+                <div class="comment">
+                    "J'adore ce crayon pour les yeux ! La couleur est intense et il reste en place toute la journée sans s'estomper."
+                </div>
+                <div class="customer-name">
+                    - Sophie Lambert
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="../../images/profil-client/photo-laura.png" alt="Photo du client">
+                <div class="rating">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+                <div class="comment">
+                    "Le meilleur crayon noir que j'ai jamais utilisé, je le recommande vivement."
+                </div>
+                <div class="customer-name">
+                    - Laura Bernard
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Informations</h3>
+                <p>Adresse: 123 Rue Exemple, Ville</p>
+                <p>Email: contact@example.com</p>
+            </div>
+            <div class="footer-links">
+                <h3>Liens utiles</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Produits</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/?locale=fr_FR" target="_blank"><img src="../../images/icones/facebook.png" alt="Facebook" class="social-icon"></a>
+                    <a href="https://x.com/?lang=fr&mx=2" target="_blank"><img src="../../images/icones/twitter.png" alt="Twitter" class="social-icon"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="../../images/icones/instagram.png" alt="Instagram" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('active');
+        }
+
+        function changeImage(element) {
+            const mainImage = document.getElementById('product-image');
+            mainImage.src = element.src;
+        }
+
+        // Ajouter au panier
+        document.getElementById('btn-add-to-cart').addEventListener('click', function() {
+            const productContainer = document.querySelector('.product-container');
+            const productId = productContainer.getAttribute('data-product-id');
+            const productName = productContainer.getAttribute('data-product-name');
+            const productPrice = parseFloat(productContainer.getAttribute('data-product-price'));
+            const productImage = document.getElementById('product-image').src;
+            const quantity = parseInt(document.getElementById('quantity').value);
+
+            const cartItem = {
+                id: productId,
+                name: productName,
+                price: productPrice,
+                image: productImage,
+                quantity: quantity
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItemIndex = cart.findIndex(item => item.id === productId);
+
+            if (existingItemIndex >= 0) {
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                cart.push(cartItem);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Article ajouté au panier !');
+        });
+
+        // Ajouter aux favoris
+        // Ajouter aux favoris
+    document.getElementById('btn-add-to-favorites').addEventListener('click', function() {
+        const productContainer = document.querySelector('.product-container');
+        const productId = productContainer.getAttribute('data-product-id');
+        const productName = productContainer.getAttribute('data-product-name');
+        const productPrice = parseFloat(productContainer.getAttribute('data-product-price'));
+        const productImage = document.getElementById('product-image').src;
+
+        const favoriteItem = {
+            id: productId,
+            name: productName,
+            price: productPrice,
+            image: productImage
+        };
+
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const existingItemIndex = favorites.findIndex(item => item.id === productId);
+
+        if (existingItemIndex >= 0) {
+            alert('Ce produit est déjà dans vos favoris.');
+        } else {
+            favorites.push(favoriteItem);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            alert('Article ajouté aux favoris !');
+        }
+    });
+    </script>
+</body>
+</html>
