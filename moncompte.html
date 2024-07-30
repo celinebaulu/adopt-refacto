@@ -3,95 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon compte - Adopt - Parfums français</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Créer un Compte - Crayon Regard de Minuit</title>
+    <link rel="stylesheet" href="css/style-compte.css">
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Bandeau -->
     <div class="bandeau">
-        <div class="bandeau-message">Livraison offerte dès 30€ !</div>
+        <div class="bandeau-message">
+            Livraison offerte dès 30€ !
+        </div>
     </div>
-
+    
     <!-- Header -->
-    <header>
+    <header id="main-header">
         <div class="header-content">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo-principal.png" alt="logo principal adopt" class="logo">
+            <a href="../../index.html" class="logo-link">
+                <img src="../../images/logo-principal.png" alt="logo principal adopt" class="logo">
             </a>
+            <button class="burger-menu" onclick="toggleMenu()">☰</button>
             <nav class="main-nav" id="main-nav">
                 <ul class="nav-menu">
-                    <li><a href="categorie-best.html">Best-seller</a></li>
-                    <li><a href="soldes.html">Soldes</a></li>
-                    <li><a href="parfum.html">Parfum</a></li>
-                    <li><a href="corps.html">Corps</a></li>
-                    <li><a href="visage.html">Visage</a></li>
-                    <li><a href="maquillage.html">Maquillage</a></li>
-                    <li><a href="cadeau.html">Cadeau</a></li>
-                    <li><a href="nouveautes.html">Nouveautés</a></li>
+                    <li><a href="../../categorie-best.html">Best-seller</a></li>
+                    <li><a href="../../categorie-soldes.html">Soldes</a></li>
+                    <li><a href="../../categorie-parfums.html">Parfums</a></li>
+                    <li><a href="../../categorie-corps.html">Corps</a></li>
+                    <li><a href="../../categorie-visage.html">Visage</a></li>
+                    <li><a href="../../categorie-maquillage.html">Maquillage</a></li>
+                    <li><a href="../../categorie-nouveautes.html">Nouveautés</a></li>
                 </ul>
             </nav>
-            <button class="burger-menu" id="burger-menu">&#9776;</button>
             <div class="header-icons">
-                <a href="panier.html" class="header-icon">🛒</a>
-                <a href="espace-utilisateur.html" class="header-icon">👤</a>
-                <a href="favoris.html" class="header-icon">❤️</a>
+                <a href="../../panier.html" class="header-icon">
+                    <img src="../../images/icones/panier.png" alt="Panier">
+                </a>
+                <a href="../../moncompte.html" class="header-icon">
+                    <img src="../../images/icones/utilisateur.png" alt="Mon compte">
+                </a>
+                <a href="../../favoris.html" class="header-icon">
+                    <img src="../../images/icones/coeur.png" alt="Favoris">
+                </a>
             </div>
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Rechercher...">
-            <button type="submit">Recherche</button>
+            <button type="submit" aria-label="Lancer la recherche">Recherche</button>
         </div>
     </header>
 
-    <!-- Section connexion -->
-    <main>
-        <div class="login-container">
-            <h1>Connexion</h1>
-            <form action="connexion-process.html" method="post" class="login-form">
-                <div class="form-group">
-                    <label for="email">Adresse e-mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="login-button">Se connecter</button>
-                <p class="forgot-password">
-                    <a href="reinitialiser-mot-de-passe.html">Mot de passe oublié ?</a>
-                </p>
-            </form>
-        </div>
-    </main>
+    <div class="category-banner">
+        <nav class="breadcrumb">
+            <a href="../../index.html">
+                <img src="../../images/icones/home.png">
+            </a> / <span>Créer un Compte</span>
+        </nav>
+    </div>
+
+    <div class="create-account-container">
+        <h1>Créer un Compte</h1>
+        <form action="process_account_creation.php" method="POST">
+            <div class="form-group">
+                <label for="first-name">Prénom</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Nom</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Adresse Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de Passe</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirmer le Mot de Passe</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit" class="btn-submit">Créer mon compte</button>
+        </form>
+        <p>Déjà un compte ? <a href="../../login.html">Connectez-vous ici</a>.</p>
+    </div>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-info">
-                <h3>Contact</h3>
-                <p>Email: contact@adopt.com</p>
-                <p>Téléphone: +33 4 79 00 00 00</p>
-                <p>Adresse: 123 Rue du Commerce, Chambéry</p>
+                <h3>Informations</h3>
+                <p>Adresse: 123 Rue Exemple, Ville</p>
+                <p>Email: contact@example.com</p>
             </div>
             <div class="footer-links">
-                <h3>Liens Utiles</h3>
+                <h3>Liens utiles</h3>
                 <ul>
-                    <li><a href="a-propos.html">À Propos</a></li>
-                    <li><a href="conditions.html">Conditions Générales</a></li>
-                    <li><a href="politique-confidentialite.html">Politique de Confidentialité</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Produits</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-social">
                 <h3>Suivez-nous</h3>
-                <a href="https://facebook.com" class="social-icon"><img src="images/facebook-icon.png" alt="Facebook"></a>
-                <a href="https://instagram.com" class="social-icon"><img src="images/instagram-icon.png" alt="Instagram"></a>
-                <a href="https://twitter.com" class="social-icon"><img src="images/twitter-icon.png" alt="Twitter"></a>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/?locale=fr_FR" target="_blank"><img src="../../images/icones/facebook.png" alt="Facebook" class="social-icon"></a>
+                    <a href="https://x.com/?lang=fr&mx=2" target="_blank"><img src="../../images/icones/twitter.png" alt="Twitter" class="social-icon"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="../../images/icones/instagram.png" alt="Instagram" class="social-icon"></a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
