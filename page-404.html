@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page non trouvée - Adopt</title>
+    <link rel="stylesheet" href="../../css/style-product.css">
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Bandeau -->
+    <div class="bandeau">
+        <div class="bandeau-message">
+            Livraison offerte dès 30€ !
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo-link">
+                <img src="../../images/logo-principal.png" alt="logo principal adopt" class="logo">
+            </a>
+            <button class="burger-menu" onclick="toggleMenu()">☰</button>
+            <nav class="main-nav" id="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="../../categorie-best.html">Best-seller</a></li>
+                    <li><a href="../../categorie-soldes.html">Soldes</a></li>
+                    <li><a href="../../categorie-parfums.html">Parfums</a></li>
+                    <li><a href="../../categorie-corps.html">Corps</a></li>
+                    <li><a href="../../categorie-visage.html">Visage</a></li>
+                    <li><a href="../../categorie-maquillage.html">Maquillage</a></li>
+                    <li><a href="../../categorie-nouveautes.html">Nouveautés</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="../../panier.html" class="header-icon">
+                    <img src="../../images/icones/panier.png" alt="Panier">
+                </a>
+                <a href="../../moncompte.html" class="header-icon">
+                    <img src="../../images/icones/utilisateur.png" alt="Mon compte">
+                </a>
+                <a href="../../favoris.html" class="header-icon">
+                    <img src="../../images/icones/coeur.png" alt="Favoris">
+                </a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher...">
+            <button type="submit" aria-label="Lancer la recherche">Recherche</button>
+        </div>
+    </header>
+
+    <!-- Contenu de la page 404 -->
+    <div class="error-404-container">
+        <h1 class="error-title">404 - Page non trouvée</h1>
+        <p class="error-message">Désolé, la page que vous recherchez n'existe pas ou a été déplacée.</p>
+        <a href="../../index.html" class="error-link">Retour à la page d'accueil</a>
+    </div>
+
+    <section id="available-pages">
+        <h2>Pages Disponibles</h2>
+        <ul>
+          <li>Toutes les pages des catégories</li>
+          <li>Les produits des catégories visage</li>
+          <li>Les produits des catégories maquillage</li>
+          <li>La page produit du parfum Monoï Party</li>
+          <li>La page des favoris</li>
+          <li>La page du panier</li>
+          <li>La page de connexion au compte</li>
+        </ul>
+      </section>
+  
+      <section id="categories">
+        <h2>Parcourir par Catégorie</h2>
+        <ul>
+          <li><a href="/category/visage">Visage</a></li>
+          <li><a href="/category/maquillage">Maquillage</a></li>
+          <li><a href="/category/parfum">Parfum</a></li>
+          <li><a href="/category/corps">Corps</a></li>
+          <li><a href="/category/cheveux">Cheveux</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Informations</h3>
+                <p>Adresse: 123 Rue Exemple, Ville</p>
+                <p>Email: contact@example.com</p>
+            </div>
+            <div class="footer-links">
+                <h3>Liens utiles</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Produits</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/?locale=fr_FR" target="_blank"><img src="../../images/icones/facebook.png" alt="Facebook" class="social-icon"></a>
+                    <a href="https://x.com/?lang=fr&mx=2" target="_blank"><img src="../../images/icones/twitter.png" alt="Twitter" class="social-icon"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="../../images/icones/instagram.png" alt="Instagram" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

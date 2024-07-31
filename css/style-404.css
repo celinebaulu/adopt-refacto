@@ -1,0 +1,29 @@
+/* Styles pour la page 404 */
+.error-404-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.error-title {
+    font-size: 36px;
+    color: #ff0000;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.error-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.error-link:hover {
+    background-color: #555;
+}
