@@ -1,0 +1,412 @@
+/* Styles généraux pour le body */
+body {
+    margin: 0;
+    font-family: 'Gotham', sans-serif;
+    color: #222222;
+    background-color: #F4EFE9;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style pour le bandeau */
+.bandeau {
+    background-color: #49583C;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Style pour le contenu du bandeau */
+.bandeau-message {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Style pour le header */
+header {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-top: 50px; /* Pour laisser de l'espace pour le bandeau */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.burger-menu {
+    display: none; /* Masqué par défaut, affiché pour mobile */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.main-nav {
+    flex: 1;
+    margin-left: 50px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin: 0 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav-menu a:hover {
+    color: #ff0000;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.header-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover; /* Assure que les images sont bien dimensionnées sans déformation */
+}
+
+/* Assurez-vous que les icônes ont un espace suffisant */
+.header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style pour la barre de recherche */
+.search-bar {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search-bar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Style pour le fil d'Ariane */
+.breadcrumb {
+    font-family: 'Gotham', sans-serif;
+    font-size: 14px;
+    margin: 10px 20px; /* Espace autour du fil d'Ariane */
+    padding: 10px;
+    background-color: transparent; /* Fond léger */
+    border-radius: 3px;
+    display: inline-block; /* Alignement en ligne */
+    text-transform: uppercase;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #070707;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center; /* Aligne l'icône au centre verticalement */
+    text-transform: uppercase;
+}
+
+.breadcrumb img {
+    width: 16px; /* Largeur de l'icône */
+    height: 16px; /* Hauteur de l'icône */
+    margin-right: 5px; /* Espace entre l'icône et le texte suivant */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+.breadcrumb span {
+    text-decoration: underline;
+    margin-left: 8px;
+}
+
+.category-banner {
+    width: 100%; /* Prend toute la largeur de la page */
+    background: linear-gradient(to right, #F4C430, #5750a9); /* Dégradé de gauche à droite */
+    padding: 5px 0; /* Espacement vertical */
+    text-align: left; /* Alignement à gauche */
+}
+
+/* Styles pour le conteneur principal */
+.product-container {
+    display: flex;
+    flex-direction: row; /* Changed to row to place details to the right */
+    padding: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: auto;
+    max-width: 800px;
+}
+
+.images-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.small-images {
+    display: flex;
+    flex-direction: column; /* Aligne les images en colonne */
+    gap: 10px;
+    justify-content: flex-end; /* Alignement au bas de la main-image */
+    align-items: center;
+}
+
+.small-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.main-image-container {
+    width: 700px;
+    height: 700px;
+    margin-left: 10px;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-details {
+    margin: 40px 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stars {
+    color: #FFD700; /* Couleur des étoiles */
+    font-size: 18px; /* Taille des étoiles */
+}
+
+.reviews {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.old-price {
+    text-decoration: line-through; /* Barré */
+    color: rgb(0, 0, 0); /* Couleur du prix barré */
+    margin-right: 5px; /* Espacement avec le nouveau prix */
+}
+
+.new-price {
+    color: #ff0000; /* Couleur du nouveau prix */
+    font-weight: bold; /* Gras pour le nouveau prix */
+}
+
+/* Style pour les boutons */
+.product-buttons {
+    display: flex;
+    align-items: left;
+    gap: 10px; /* Espace entre les boutons */
+    justify-content: left; /* Centre les boutons horizontalement */
+    margin-top: 10px; /* Espace au-dessus des boutons, optionnel */
+}
+
+.product-buttons button {
+    pointer-events: auto;
+}
+
+/* Style pour le bouton "Ajouter aux favoris" avec une image */
+.btn-favorite {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #222222; /* Bordure noire de 1px */
+    border-radius: 6px;
+    background: transparent; /* Fond transparent */
+    padding: 0;
+    width: 50px; /* Largeur du bouton */
+    height: 30px; /* Hauteur du bouton */
+    cursor: pointer;
+    box-sizing: border-box; /* Inclut la bordure dans les dimensions totales */
+    transition: background-color 0.3s; /* Transition douce pour la couleur de fond */
+}
+
+.btn-favorite img {
+    width: 20px; /* Largeur de l'image à l'intérieur du bouton */
+    height: auto; /* Hauteur de l'image ajustée proportionnellement */
+    max-height: 20px; /* Limite la hauteur de l'image pour s'adapter à la hauteur du bouton */
+}
+
+/* Style pour le bouton "Acheter maintenant" avec une image */
+.btn-add-to-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #222222; /* Bordure  de 1px */
+    border-radius: 6px;
+    background: transparent; /* Fond transparent */
+    padding: 0;
+    width: 50px; /* Largeur du bouton */
+    height: 30px; /* Hauteur du bouton */
+    cursor: pointer;
+    box-sizing: border-box; /* Inclut la bordure dans les dimensions totales */
+    transition: background-color 0.3s; /* Transition douce pour la couleur de fond */
+}
+
+.btn-add-to-cart img {
+    width: 20px; /* Largeur de l'image à l'intérieur du bouton */
+    height: auto; /* Hauteur de l'image ajustée proportionnellement */
+    max-height: 20px; /* Limite la hauteur de l'image pour s'adapter à la hauteur du bouton */
+}
+
+/* Style pour le footer */
+footer {
+    background-color: #49583C;
+    color: #FFFFFF;
+    padding: 20px 0;
+    margin-top: auto; /* Fait en sorte que le footer soit toujours en bas de la page */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px; /* Espacement entre les liens */
+}
+
+.footer-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+.footer-icons {
+    display: flex;
+    gap: 15px; /* Espacement entre les icônes */
+}
+
+.footer-icons img {
+    width: 25px; /* Largeur des icônes */
+    height: auto; /* Hauteur des icônes ajustée proportionnellement */
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Change la direction pour mobile */
+        align-items: flex-start; /* Aligne les éléments sur la gauche */
+    }
+
+    .burger-menu {
+        display: block; /* Affiche le menu burger sur mobile */
+    }
+
+    .nav-menu {
+        display: none; /* Cache le menu principal sur mobile */
+        flex-direction: column; /* Affiche en colonne */
+    }
+
+    .nav-menu li {
+        margin: 5px 0; /* Ajuste l'espacement des éléments du menu */
+    }
+
+    .product-container {
+        flex-direction: column; /* Affiche les produits en colonne sur mobile */
+    }
+
+    .main-image-container, .product-details {
+        width: 100%; /* Rendre les éléments responsifs */
+        margin: 0;
+    }
+
+    .footer-content {
+        flex-direction: column; /* Aligne le footer en colonne sur mobile */
+    }
+
+    .footer-links {
+        flex-direction: column; /* Affiche les liens du footer en colonne sur mobile */
+    }
+
+    .footer-icons {
+        justify-content: center; /* Centre les icônes du footer sur mobile */
+    }
+}
