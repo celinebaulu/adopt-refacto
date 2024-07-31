@@ -1,24 +1,162 @@
+/* Styles généraux pour le body */
+body {
+    margin: 0;
+    font-family: 'Gotham', sans-serif;
+    color: #222222;
+    background-color: #F4EFE9;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style pour le bandeau */
+.bandeau {
+    background-color: #49583C;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Style pour le contenu du bandeau */
+.bandeau-message {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Style pour le header */
+header {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.main-nav {
+    flex: 1;
+    margin-left: 50px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin: 0 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav-menu a:hover {
+    color: #ff0000;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.header-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover; /* Assure que les images sont bien dimensionnées sans déformation */
+}
+
+/* Assurez-vous que les icônes ont un espace suffisant */
+.header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style pour la barre de recherche */
+.search-bar {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search-bar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
 /* Styles pour la page 404 */
 .error-404-container {
     text-align: center;
     padding: 50px 20px;
 }
 
+/* Styles pour l'image */
+.error-image {
+    max-width: 100%; /* S'assure que l'image ne dépasse pas la largeur de l'écran */
+    height: auto;    /* Garde les proportions de l'image */
+    margin: 20px 0;  /* Ajoute un espacement autour de l'image */
+}
+
 .error-title {
     font-size: 36px;
-    color: #ff0000;
-    margin-bottom: 20px;
+    color: #222222;
+    margin-bottom: 5px;
 }
 
 .error-message {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .error-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #222222;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -26,4 +164,90 @@
 
 .error-link:hover {
     background-color: #555;
+}
+
+/* Enlève les puces de la liste dans la section Pages Disponibles */
+#available-pages ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0; /* Supprime le remplissage par défaut */
+    margin: 0; /* Supprime la marge par défaut */
+}
+
+#available-pages li {
+    margin-bottom: 10px; /* Ajoute un espacement entre les éléments de la liste */
+}
+
+
+/* Style pour le footer */
+.site-footer {
+    background-color: #839771;
+    color: #fff;
+    padding: 40px 20px; /* Augmente l'espacement */
+    text-align: center;
+    font-family: 'Gotham', sans-serif; /* Applique la police Gotham */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto; /* Assure que le footer reste en bas */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Aligne les éléments sur toute la largeur */
+    max-width: 1200px; /* Limite la largeur du contenu */
+    width: 100%;
+}
+
+.footer-info, .footer-links, .footer-social {
+    margin: 0 15px; /* Espacement entre les sections */
+    flex: 1 1 200px; /* Flexibilité pour les tailles des colonnes */
+}
+
+.footer-info h3, .footer-links h3, .footer-social h3 {
+    margin-bottom: 15px; /* Espace sous le titre */
+    font-size: 18px; /* Taille du texte des titres */
+    font-weight: 700;
+    border-bottom: 2px solid #222222; /* Ligne sous les titres */
+    padding-bottom: 10px; /* Espacement sous la ligne */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin: 10px 0; /* Espacement entre les liens */
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px; /* Taille du texte des liens */
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff0000; /* Couleur au survol des liens */
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacement entre les icônes sociales */
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ddd;
 }
