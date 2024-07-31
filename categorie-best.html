@@ -31,7 +31,6 @@
                     <li><a href="categorie-nouveautes.html">Nouveautés</a></li>
                 </ul>
             </nav>
-            <button class="burger-menu" id="burger-menu" aria-label="Menu principal">&#9776;</button>
             <div class="header-icons">
                 <a href="panier.html" class="header-icon">
                     <img src="images/icones/panier.png" alt="Panier">
@@ -200,6 +199,15 @@
             </div>
         </div>
     </footer>
+
+    <script>
+         function toggleMenu() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('active');
+        }
+
+
+    </script>
 
     <script src="js/main.js"></script>
     <script src="js/sort.js"></script>

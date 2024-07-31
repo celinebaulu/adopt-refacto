@@ -19,6 +19,7 @@
             <a href="index.html" class="logo-link">
                 <img src="images/logo-principal.png" alt="logo principal adopt" class="logo">
             </a>
+            <button class="burger-menu" onclick="toggleMenu()">☰</button>
             <nav class="main-nav" id="main-nav">
                 <ul class="nav-menu">
                     <li><a href="categorie-best.html">Best-seller</a></li>
@@ -30,7 +31,6 @@
                     <li><a href="categorie-nouveautes.html">Nouveautés</a></li>
                 </ul>
             </nav>
-            <button class="burger-menu" id="burger-menu" aria-label="Menu principal">&#9776;</button>
             <div class="header-icons">
                 <a href="panier.html" class="header-icon">
                     <img src="images/icones/panier.png" alt="Panier">
@@ -187,7 +187,13 @@
             </div>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+           const nav = document.querySelector('.main-nav');
+           nav.classList.toggle('active');
+       }
 
+   </script>
     <script src="js/main.js"></script>
     <script src="js/sort.js"></script>
 </body>

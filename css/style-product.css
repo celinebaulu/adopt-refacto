@@ -567,7 +567,7 @@ header {
 
 
 /* Media Queries pour la réactivité */
-@media (max-width: 599px) {
+@media (max-width: 610px) {
     .header-content {
         flex-direction: column;
         align-items: center;
@@ -648,7 +648,7 @@ header {
 }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 611px) {
     .header-content {
         flex-direction: row;
         align-items: center;

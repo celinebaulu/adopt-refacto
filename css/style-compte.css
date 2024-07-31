@@ -369,44 +369,135 @@ footer {
     height: auto; /* Hauteur des icônes ajustée proportionnellement */
 }
 
-/* Media queries pour la responsivité */
-@media (max-width: 768px) {
+/* Media Queries pour la réactivité */
+@media (max-width: 610px) {
     .header-content {
-        flex-direction: column; /* Change la direction pour mobile */
-        align-items: flex-start; /* Aligne les éléments sur la gauche */
+        flex-direction: column;
+        align-items: center;
     }
 
     .burger-menu {
-        display: block; /* Affiche le menu burger sur mobile */
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+    }
+
+    .main-nav.active {
+        display: block;
     }
 
     .nav-menu {
-        display: none; /* Cache le menu principal sur mobile */
-        flex-direction: column; /* Affiche en colonne */
+        flex-direction: column;
+        align-items: center;
     }
 
     .nav-menu li {
-        margin: 5px 0; /* Ajuste l'espacement des éléments du menu */
+        margin: 10px 0;
+    }
+
+    .header-icons {
+        margin-top: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .search-bar input[type="text"] {
+        width: calc(100% - 120px); /* Ajuster la largeur de l'input */
     }
 
     .product-container {
-        flex-direction: column; /* Affiche les produits en colonne sur mobile */
+        flex-direction: column;
+        align-items: center;
     }
 
-    .main-image-container, .product-details {
-        width: 100%; /* Rendre les éléments responsifs */
-        margin: 0;
+    .product-images {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .footer-content {
-        flex-direction: column; /* Aligne le footer en colonne sur mobile */
+    .small-images {
+        display: flex;
+        flex-direction: column; /* Assure que les images sont en colonne */
+        gap: 10px;
+        justify-content: flex-end; /* Alignement au bas de la main-image */
+        align-items: center;
     }
 
-    .footer-links {
-        flex-direction: column; /* Affiche les liens du footer en colonne sur mobile */
+    .small-image {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        cursor: pointer;
     }
 
-    .footer-icons {
-        justify-content: center; /* Centre les icônes du footer sur mobile */
+    .main-image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-details {
+        text-align: left;
+        width: 90%;
+        align-self: center; /* Centrer les détails sur les petits écrans */
+        margin: auto;
+        
+}
+}
+
+@media (min-width: 611px) {
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .main-nav {
+        display: block;
+    }
+
+    .product-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .product-images {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .small-images {
+        flex-direction: column; /* Assure que les images sont en colonne */
+        gap: 10px;
+        justify-content: flex-end; /* Alignement au bas de la main-image */
+        align-items: center;
+        margin-top: auto;
+    }
+
+    .small-image {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .main-image-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .product-details {
+        text-align: left;
+        margin-left: 10px; /* Adds space between images and details */
+        align-self: center; /* Centre les détails verticalement */
     }
 }

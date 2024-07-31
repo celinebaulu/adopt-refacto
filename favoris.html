@@ -19,23 +19,22 @@
             <a href="index.html" class="logo-link">
                 <img src="images/logo-principal.png" alt="logo principal adopt" class="logo">
             </a>
+            <button class="burger-menu" onclick="toggleMenu()">☰</button>
             <nav class="main-nav" id="main-nav">
                 <ul class="nav-menu">
                     <li><a href="categorie-best.html">Best-seller</a></li>
-                    <li><a href="soldes.html">Soldes</a></li>
-                    <li><a href="parfum.html">Parfum</a></li>
-                    <li><a href="corps.html">Corps</a></li>
-                    <li><a href="visage.html">Visage</a></li>
-                    <li><a href="maquillage.html">Maquillage</a></li>
-                    <li><a href="cadeau.html">Cadeau</a></li>
-                    <li><a href="nouveautes.html">Nouveautés</a></li>
+                    <li><a href="categorie-soldes.html">Soldes</a></li>
+                    <li><a href="caparfum.html">Parfum</a></li>
+                    <li><a href="categorie-corps.html">Corps</a></li>
+                    <li><a href="categorie-visage.html">Visage</a></li>
+                    <li><a href="categorie-maquillage.html">Maquillage</a></li>
+                    <li><a href="categorie-nouveautes.html">Nouveautés</a></li>
                 </ul>
             </nav>
-            <button class="burger-menu" id="burger-menu">&#9776;</button>
             <div class="header-icons">
-                <a href="panier.html" class="header-icon">🛒</a>
-                <a href="moncompte.html" class="header-icon">👤</a>
-                <a href="favoris.html" class="header-icon">❤️</a>
+                <a href="panier.html" class="header-icon"><img src="images/icones/panier.png" alt="mon panier"></a>
+                <a href="moncompte.html" class="header-icon"><img src="images/icones/utilisateur.png" alt="mon compte"></a>
+                <a href="favoris.html" class="header-icon"><img src="images/icones/coeur.png" alt="mes favoris"></a>
             </div>
         </div>
         <div class="search-bar">
@@ -104,6 +103,11 @@
                 favoritesContainer.appendChild(favoriteItem);
             });
         });
+
+        function toggleMenu() {
+       const nav = document.querySelector('.main-nav');
+       nav.classList.toggle('active');
+   }
     </script>
     
 </body>
