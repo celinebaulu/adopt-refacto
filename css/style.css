@@ -134,20 +134,22 @@ header {
 .carousel-container {
     position: relative;
     width: 100%;
-    height: 500px; /* Hauteur fixe du carrousel */
+    height: auto; /* Change from fixed height to auto */
     overflow: hidden;
+    max-height: 80vh; /* Limits the maximum height to 80% of the viewport height */
 }
 
 /* Style pour les images du carrousel */
 .main-image {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    height: 100%;
+    width: 100%;
+    height: auto; /* Change from fixed height to auto */
 }
 
 .main-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     flex-shrink: 0;
 }
@@ -178,7 +180,7 @@ header {
 /* Responsive Design */
 @media (max-width: 768px) {
     .carousel-container {
-        height: 300px; /* Réduit la hauteur sur les écrans plus petits */
+        max-height: 60vh; /* Further limits the height on smaller screens */
     }
 
     .carousel-prev, .carousel-next {
