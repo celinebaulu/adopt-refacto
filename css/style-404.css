@@ -12,7 +12,7 @@ body {
 
 /* Style pour le bandeau */
 .bandeau {
-    background-color: #49583C;
+    background-color: #839771;
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
@@ -78,11 +78,10 @@ header {
     text-decoration: none;
     color: #333;
     text-transform: uppercase;
-    font-weight: 700;
 }
 
 .nav-menu a:hover {
-    color: #ff0000;
+    color: #859477;
 }
 
 .header-icons {
@@ -133,6 +132,7 @@ header {
 .error-404-container {
     text-align: center;
     padding: 50px 20px;
+    flex-grow: 1; /* Permet à la section de prendre tout l'espace disponible */
 }
 
 /* Styles pour l'image */
@@ -180,7 +180,7 @@ header {
 
 /* Style pour le footer */
 .site-footer {
-    background-color: #839771;
+    background-color:#839771;
     color: #fff;
     padding: 40px 20px; /* Augmente l'espacement */
     text-align: center;
@@ -231,7 +231,6 @@ header {
 }
 
 .footer-links a:hover {
-    color: #ff0000; /* Couleur au survol des liens */
     text-decoration: underline;
 }
 

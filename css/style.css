@@ -1,14 +1,14 @@
 @font-face {
 	font-family: 'Gotham';
-	src: url(‘/font/Gotham-Book.woff2’) format(‘woff2’),
-		url(‘/font/Gotham-Book.tff) format(‘truetype’)
+	src: url("/font/Gotham-Book.woff2") format("woff2"),
+		url("/font/Gotham-Book.tff") format("truetype")
 }
 
 
 /* Styles généraux pour le body */
 body {
     margin: 0;
-    font-family: 'Gotham', serif;
+    font-family: 'Gotham', sans-serif;
     color: #333;
     line-height: 1.6;
     min-height: 100vh;
@@ -393,7 +393,7 @@ header {
 
 /* Style pour le footer */
 .site-footer {
-    background-color: #333;
+    background-color: #839771;
     color: #fff;
     padding: 40px 20px; /* Augmente l'espacement */
     text-align: center;
@@ -421,7 +421,7 @@ header {
     margin-bottom: 15px; /* Espace sous le titre */
     font-size: 18px; /* Taille du texte des titres */
     font-weight: 700;
-    border-bottom: 2px solid #ff0000; /* Ligne sous les titres */
+    border-bottom: 2px solid #000000; /* Ligne sous les titres */
     padding-bottom: 10px; /* Espacement sous la ligne */
 }
 
@@ -443,7 +443,6 @@ header {
 }
 
 .footer-links a:hover {
-    color: #ff0000; /* Couleur au survol des liens */
     text-decoration: underline;
 }
 

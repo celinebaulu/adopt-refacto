@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'Gotham';
+	src: url("/font/Gotham-Book.woff2") format("woff2"),
+		url("/font/Gotham-Book.tff") format("truetype")
+}
+
+
 /* Styles généraux pour le body */
 body {
     margin: 0;
@@ -12,7 +19,7 @@ body {
 
 /* Style pour le bandeau */
 .bandeau {
-    background-color: #49583C;
+    background-color: #839771;
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
@@ -82,7 +89,7 @@ header {
 }
 
 .nav-menu a:hover {
-    color: #ff0000;
+    color: #859477;
 }
 
 .header-icons {
@@ -499,7 +506,6 @@ header {
 }
 
 .footer-links a:hover {
-    color: #ff0000; /* Couleur au survol des liens */
     text-decoration: underline;
 }
 
