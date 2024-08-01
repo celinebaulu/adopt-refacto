@@ -1,7 +1,14 @@
+@font-face {
+	font-family: 'Gotham';
+	src: url(‘/font/Gotham-Book.woff2’) format(‘woff2’),
+		url(‘/font/Gotham-Book.tff) format(‘truetype’)
+}
+
+
 /* Styles généraux pour le body */
 body {
     margin: 0;
-    font-family: 'Gotham', sans-serif;
+    font-family: 'Gotham', serif;
     color: #333;
     line-height: 1.6;
     min-height: 100vh;
@@ -11,7 +18,7 @@ body {
 
 /* Style pour le bandeau */
 .bandeau {
-    background-color: #49583C;
+    background-color: #839771;
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
@@ -81,7 +88,7 @@ header {
 }
 
 .nav-menu a:hover {
-    color: #ff0000;
+    color: #859477;
 }
 
 .header-icons {
@@ -256,19 +263,19 @@ header {
 }
 
 .overlay .cta-button {
-    background-color: #ff0000;
-    color: #fff;
+    background-color: #ffffff;
+    color: #222;
     border: none;
     padding: 10px 20px;
     font-size: 16px; /* Augmente la taille du texte du bouton pour le rendre plus visible */
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 20px;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
 }
 
 .overlay .cta-button:hover {
-    background-color: #cc0000; /* Assombrit le bouton au survol */
+    background-color: #839771; /* Assombrit le bouton au survol */
 }
 
 /* Responsiveness */
@@ -288,15 +295,15 @@ header {
 
 /* Style pour les avis clients */
 .customer-reviews {
-    padding: 40px 20px;
-    background-color: #f9f9f9; /* Couleur de fond légère pour les avis */
+    padding: 20px 20px;
+    background-color: #f3f1ec; /* Couleur de fond légère pour les avis */
     text-align: center;
+    border-top: 1px solid #cac6c6 ;
 }
 
 .customer-reviews h2 {
-    font-size: 20px;
-    text-transform: uppercase;
-    font-family: 'Gotham', sans-serif;
+    font-size: 35px;
+    font-family: "DM Serif Display", serif;
     margin-bottom: 20px;
     color: #333;
 }

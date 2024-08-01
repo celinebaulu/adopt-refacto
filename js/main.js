@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const category = button.closest('.gallery-item').dataset.category;
-            alert(`Afficher les produits de la catégorie: ${category}`);
+            //alert(`Afficher les produits de la catégorie: ${category}`);
             // Vous pouvez remplacer l'alerte par une redirection ou une autre action selon vos besoins.
         });
     });
