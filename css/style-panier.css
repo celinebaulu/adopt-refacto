@@ -283,30 +283,79 @@ header {
     background-color: #0056b3; /* Couleur plus foncée au survol */
 }
 
-footer {
-    background-color: #f8f8f8;
-    padding: 20px;
+/* Style pour le footer */
+.site-footer {
+    background-color: #839771;
+    color: #fff;
+    padding: 40px 20px; /* Augmente l'espacement */
     text-align: center;
+    font-family: 'Gotham', sans-serif; /* Applique la police Gotham */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto; /* Assure que le footer reste en bas */
 }
 
 .footer-content {
-    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Aligne les éléments sur toute la largeur */
+    max-width: 1200px; /* Limite la largeur du contenu */
+    width: 100%;
 }
 
-.footer-links {
+.footer-info, .footer-links, .footer-social {
+    margin: 0 15px; /* Espacement entre les sections */
+    flex: 1 1 200px; /* Flexibilité pour les tailles des colonnes */
+}
+
+.footer-info h3, .footer-links h3, .footer-social h3 {
+    margin-bottom: 15px; /* Espace sous le titre */
+    font-size: 18px; /* Taille du texte des titres */
+    font-weight: 700;
+    border-bottom: 2px solid #222222; /* Ligne sous les titres */
+    padding-bottom: 10px; /* Espacement sous la ligne */
+}
+
+.footer-links ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-links li {
-    display: inline;
-    margin: 0 10px;
+    margin: 10px 0; /* Espacement entre les liens */
 }
 
 .footer-links a {
+    color: #fff;
     text-decoration: none;
-    color: #333;
+    font-size: 16px; /* Taille du texte des liens */
+    transition: color 0.3s;
 }
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacement entre les icônes sociales */
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ddd;
+}
+
 
 /* Media Queries pour la réactivité */
 @media (max-width: 610px) {
