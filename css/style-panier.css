@@ -402,8 +402,21 @@ header {
 
     .cart-item {
         flex-direction: column; /* Empile les éléments verticalement sur mobile */
-        align-items: flex-start; /* Aligne le texte à gauche */
+        align-items: center; /* Centre le contenu */
     }
+
+    .cart-item-image-container {
+        margin-bottom: 10px; /* Espacement en bas de l'image sur mobile */
+    }
+
+    .cart-item-info {
+        display: flex; /* Affiche les informations sur une ligne */
+        justify-content: space-between; /* Espace entre chaque élément */
+        width: 100%; /* Prend toute la largeur disponible */
+        align-items: center; /* Aligne verticalement */
+    }
+}
+
 
     .cart-item-image {
         margin-bottom: 10px; /* Espacement en bas de l'image sur mobile */
@@ -412,7 +425,7 @@ header {
     .cart-summary {
         text-align: center; /* Centre le résumé sur mobile */
     }
-}
+
 
 @media (min-width: 611px) {
     .header-content {

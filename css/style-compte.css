@@ -41,7 +41,7 @@ header {
     background: #fff;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
-    margin-top: 50px; /* Pour laisser de l'espace pour le bandeau */
+    margin-top: 50px;
 }
 
 .header-content {
@@ -58,7 +58,7 @@ header {
 }
 
 .burger-menu {
-    display: none; /* Masqué par défaut, affiché pour mobile */
+    display: none;
     background: none;
     border: none;
     font-size: 24px;
@@ -91,6 +91,7 @@ header {
 .nav-menu a:hover {
     color: #859477;
 }
+
 .header-icons {
     display: flex;
     gap: 20px;
@@ -135,6 +136,336 @@ header {
     background-color: #555;
 }
 
+/* CARROUSEL - ne pas toucher !!!! */
+
+/* Style pour le conteneur du carrousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: auto; /* Change from fixed height to auto */
+    overflow: hidden;
+    max-height: 80vh; /* Limits the maximum height to 80% of the viewport height */
+}
+
+/* Style pour les images du carrousel */
+.main-image {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: auto; /* Change from fixed height to auto */
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Style pour les boutons de navigation */
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+    border-radius: 50%;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-height: 60vh; /* Further limits the height on smaller screens */
+    }
+
+    .carousel-prev, .carousel-next {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+
+/* CATEGORIES PRODUITS - ne pas toucher !!!! */
+/* Style pour les catégories produits */
+.image-gallery {
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond pour faire ressortir la galerie */
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Réduit l'espace entre les éléments */
+    max-width: 1200px; /* Limite la largeur maximale pour une meilleure présentation */
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    width: 350px; /* Réduit la largeur pour un meilleur ajustement sur les petits écrans */
+    height: 400px; /* Ajuste la hauteur en proportion */
+    overflow: hidden;
+    border-radius: 8px; /* Ajoute des coins arrondis pour un aspect moderne */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère pour donner de la profondeur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Augmente l'effet de zoom */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Augmente l'opacité pour un contraste plus élevé */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1; /* Affiche l'overlay au survol */
+}
+
+.overlay h3 {
+    margin: 0;
+    font-size: 20px; /* Augmente la taille du texte pour plus de visibilité */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.overlay .cta-button {
+    background-color: #ffffff;
+    color: #222;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px; /* Augmente la taille du texte du bouton pour le rendre plus visible */
+    cursor: pointer;
+    border-radius: 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.overlay .cta-button:hover {
+    background-color: #839771; /* Assombrit le bouton au survol */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .gallery-container {
+        gap: 15px;
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* AVIS CLIENT - ne pas toucher !!!! */
+
+/* Style pour les avis clients */
+.customer-reviews {
+    padding: 20px 20px;
+    background-color: #f3f1ec; /* Couleur de fond légère pour les avis */
+    text-align: center;
+    border-top: 1px solid #cac6c6 ;
+}
+
+.customer-reviews h2 {
+    font-size: 35px;
+    font-family: "DM Serif Display", serif;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacement entre les avis */
+    justify-content: center;
+}
+
+.review-item {
+    background-color: #fff; /* Fond blanc pour les avis */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px; /* Largeur fixe pour chaque avis */
+    text-align: center; /* Centre le texte */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments dans le conteneur */
+}
+
+.review-item:hover {
+    transform: translateY(-5px); /* Léger effet d'élévation au survol */
+}
+
+.review-item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.rating {
+    margin-bottom: 10px;
+}
+
+.rating span {
+    color: #ffcc00;
+    font-size: 16px;
+}
+
+.comment {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555; /* Couleur de texte des commentaires */
+}
+
+.customer-name {
+    font-style: italic;
+    font-size: 12px;
+    color: #888; /* Couleur de texte des noms de clients */
+}
+
+/* Media queries pour les avis sur les petits écrans */
+@media (max-width: 768px) {
+    .review-item {
+        width: 100%;
+        max-width: 400px; /* Largeur maximale sur les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .review-item {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+
+
+/* Style pour l'image pleine largeur */
+.full-width-image {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.full-width-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style pour le footer */
+.site-footer {
+    background-color: #839771;
+    color: #fff;
+    padding: 40px 20px; /* Augmente l'espacement */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto; /* Assure que le footer reste en bas */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Aligne les éléments sur toute la largeur */
+    max-width: 1200px; /* Limite la largeur du contenu */
+    width: 100%;
+}
+
+.footer-info, .footer-links, .footer-social {
+    margin: 0 15px; /* Espacement entre les sections */
+    flex: 1 1 200px; /* Flexibilité pour les tailles des colonnes */
+}
+
+.footer-info h3, .footer-links h3, .footer-social h3 {
+    margin-bottom: 15px; /* Espace sous le titre */
+    font-size: 18px; /* Taille du texte des titres */
+    font-weight: 700;
+    border-bottom: 2px solid #000000; /* Ligne sous les titres */
+    padding-bottom: 10px; /* Espacement sous la ligne */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin: 10px 0; /* Espacement entre les liens */
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px; /* Taille du texte des liens */
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacement entre les icônes sociales */
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+
+
 /* Style pour le fil d'Ariane */
 .breadcrumb {
     font-family: 'Gotham', sans-serif;
@@ -178,202 +509,79 @@ header {
     text-align: left; /* Alignement à gauche */
 }
 
-/* Styles pour le conteneur principal */
-.product-container {
-    display: flex;
-    flex-direction: row; /* Changed to row to place details to the right */
-    padding: 20px;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 20px;
+/* Styles pour le conteneur de création de compte */
+.create-account-container {
+    max-width: 500px; /* Limite la largeur du conteneur */
+    margin: 30px auto; /* Centre le conteneur verticalement */
+    padding: 20px; /* Espacement intérieur */
+    background-color: #ffffff; /* Fond blanc */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
 }
 
-.product-images {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-basis: auto;
-    max-width: 800px;
+/* Styles pour les titres */
+h1 {
+    text-align: center; /* Centre le titre */
+    font-size: 24px; /* Taille du titre */
+    color: #333333; /* Couleur du titre */
+    margin-bottom: 20px; /* Espacement sous le titre */
 }
 
-.images-wrapper {
-    display: flex;
-    align-items: flex-start;
+/* Styles pour le formulaire */
+.form-group {
+    margin-bottom: 20px; /* Espacement entre les groupes de formulaire */
 }
 
-.small-images {
-    display: flex;
-    flex-direction: column; /* Aligne les images en colonne */
-    gap: 10px;
-    justify-content: flex-end; /* Alignement au bas de la main-image */
-    align-items: center;
+/* Styles pour les labels */
+label {
+    display: block; /* Force le label à occuper toute la largeur */
+    margin-bottom: 5px; /* Espacement sous le label */
+    font-weight: bold; /* Gras pour les labels */
 }
 
-.small-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    cursor: pointer;
+/* Styles pour les inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    padding: 10px; /* Espacement intérieur */
+    border: 1px solid #ddd; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans les dimensions */
+    transition: border-color 0.3s; /* Transition douce pour le focus */
 }
 
-.main-image-container {
-    width: 700px;
-    height: 700px;
-    margin-left: 10px;
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #839771; /* Changer la couleur de la bordure au focus */
+    outline: none; /* Supprimer le contour par défaut */
 }
 
-.main-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* Styles pour le bouton de soumission */
+.btn-submit {
+    width: 100%; /* Prend toute la largeur */
+    padding: 10px; /* Espacement intérieur */
+    background-color: #333; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille du texte */
+    cursor: pointer; /* Pointeur au survol */
+    transition: background-color 0.3s; /* Transition douce pour le hover */
 }
 
-.product-details {
-    margin: 40px 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.btn-submit:hover {
+    background-color: #555;
 }
 
-.product-name {
-    font-size: 28px;
-    margin-bottom: 20px;
+/* Styles pour le lien vers la page de connexion */
+p {
+    text-align: center; /* Centre le texte */
+    margin-top: 20px; /* Espacement au-dessus du paragraphe */
 }
 
-.product-description {
-    font-size: 16px;
-    line-height: 1.5;
-}
 
-.product-rating {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.stars {
-    color: #FFD700; /* Couleur des étoiles */
-    font-size: 18px; /* Taille des étoiles */
-}
-
-.reviews {
-    margin-left: 10px;
-    font-size: 16px;
-    color: #333;
-}
-
-.price {
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.old-price {
-    text-decoration: line-through; /* Barré */
-    color: rgb(0, 0, 0); /* Couleur du prix barré */
-    margin-right: 5px; /* Espacement avec le nouveau prix */
-}
-
-.new-price {
-    color: #ff0000; /* Couleur du nouveau prix */
-    font-weight: bold; /* Gras pour le nouveau prix */
-}
-
-/* Style pour les boutons */
-.product-buttons {
-    display: flex;
-    align-items: left;
-    gap: 10px; /* Espace entre les boutons */
-    justify-content: left; /* Centre les boutons horizontalement */
-    margin-top: 10px; /* Espace au-dessus des boutons, optionnel */
-}
-
-.product-buttons button {
-    pointer-events: auto;
-}
-
-/* Style pour le bouton "Ajouter aux favoris" avec une image */
-.btn-favorite {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #222222; /* Bordure noire de 1px */
-    border-radius: 6px;
-    background: transparent; /* Fond transparent */
-    padding: 0;
-    width: 50px; /* Largeur du bouton */
-    height: 30px; /* Hauteur du bouton */
-    cursor: pointer;
-    box-sizing: border-box; /* Inclut la bordure dans les dimensions totales */
-    transition: background-color 0.3s; /* Transition douce pour la couleur de fond */
-}
-
-.btn-favorite img {
-    width: 20px; /* Largeur de l'image à l'intérieur du bouton */
-    height: auto; /* Hauteur de l'image ajustée proportionnellement */
-    max-height: 20px; /* Limite la hauteur de l'image pour s'adapter à la hauteur du bouton */
-}
-
-/* Style pour le bouton "Acheter maintenant" avec une image */
-.btn-add-to-cart {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #222222; /* Bordure  de 1px */
-    border-radius: 6px;
-    background: transparent; /* Fond transparent */
-    padding: 0;
-    width: 50px; /* Largeur du bouton */
-    height: 30px; /* Hauteur du bouton */
-    cursor: pointer;
-    box-sizing: border-box; /* Inclut la bordure dans les dimensions totales */
-    transition: background-color 0.3s; /* Transition douce pour la couleur de fond */
-}
-
-.btn-add-to-cart img {
-    width: 20px; /* Largeur de l'image à l'intérieur du bouton */
-    height: auto; /* Hauteur de l'image ajustée proportionnellement */
-    max-height: 20px; /* Limite la hauteur de l'image pour s'adapter à la hauteur du bouton */
-}
-
-/* Style pour le footer */
-footer {
-    background-color: #839771;
-    color: #FFFFFF;
-    padding: 20px 0;
-    margin-top: auto; /* Fait en sorte que le footer soit toujours en bas de la page */
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 20px; /* Espacement entre les liens */
-}
-
-.footer-links a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    text-decoration: underline; /* Soulignement au survol */
-}
-
-.footer-icons {
-    display: flex;
-    gap: 15px; /* Espacement entre les icônes */
-}
-
-.footer-icons img {
-    width: 25px; /* Largeur des icônes */
-    height: auto; /* Hauteur des icônes ajustée proportionnellement */
-}
 
 /* Media Queries pour la réactivité */
 @media (max-width: 610px) {
@@ -507,3 +715,6 @@ footer {
         align-self: center; /* Centre les détails verticalement */
     }
 }
+
+
+
