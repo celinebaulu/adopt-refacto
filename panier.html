@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panier - Adopt - Parfums français</title>
-    <link rel="stylesheet" href="css/style-panier.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Mon Panier - Adopt</title>
+    <link rel="stylesheet" href="../../css/style-panier.css">
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Bandeau -->
     <div class="bandeau">
-        <div class="bandeau-message">Livraison offerte dès 30€ !</div>
+        <div class="bandeau-message">
+            Livraison offerte dès 30€ !
+        </div>
     </div>
-
+    
     <!-- Header -->
     <header id="main-header">
         <div class="header-content">
@@ -49,15 +51,41 @@
         </div>
     </header>
 
-    <!-- Section panier -->
     <div class="cart-container">
-        <h1>Votre Panier</h1>
-        <div id="cart-items" class="cart-items"></div>
-        <div id="total-price" class="total-price"></div>
-        <a href="paiement.html"><button class="btn-checkout">Accéder au paiement</button></a>
+        <h1>Mon Panier</h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix Unitaire</th>
+                    <th>Prix Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Les articles du panier seront insérés ici par JavaScript -->
+            </tbody>
+        </table>
+        <div class="cart-summary">
+            <p id="total-price">Total : 0.00€</p>
+            <button id="proceed-to-checkout" class="btn-checkout">Procéder au paiement</button>
+        </div>
     </div>
 
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Adopt. Tous droits réservés.</p>
+            <ul class="footer-links">
+                <li><a href="../../conditions-utilisation.html">Conditions d'utilisation</a></li>
+                <li><a href="../../politique-confidentialite.html">Politique de confidentialité</a></li>
+                <li><a href="../../contact.html">Contactez-nous</a></li>
+            </ul>
+        </div>
+    </footer>
+
     <script>
+
         document.addEventListener('DOMContentLoaded', function() {
             const cartItemsContainer = document.getElementById('cart-items');
             const totalPriceContainer = document.getElementById('total-price');
@@ -95,33 +123,72 @@
             const nav = document.querySelector('.main-nav');
             nav.classList.toggle('active');
         }
-    </script>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Contact</h3>
-                <p>Email: contact@adopt.com</p>
-                <p>Téléphone: +33 4 79 00 00 00</p>
-                <p>Adresse: 123 Rue du Commerce, Chambéry</p>
-            </div>
-            <div class="footer-links">
-                <h3>Liens utiles</h3>
-                <ul>
-                    <li><a href="page-404.html">À propos</a></li>
-                    <li><a href="page-404.html">Mentions légales</a></li>
-                    <li><a href="page-404.html">Conditions générales</a></li>
-                    <li><a href="page-404.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h3>Suivez-nous</h3>
-                <a href="https://facebook.com" class="social-icon"><img src="images/facebook-icon.png" alt="Facebook"></a>
-                <a href="https://instagram.com" class="social-icon"><img src="images/instagram-icon.png" alt="Instagram"></a>
-                <a href="https://twitter.com" class="social-icon"><img src="images/twitter-icon.png" alt="Twitter"></a>
-            </div>
-        </div>
-    </footer>
+        document.addEventListener('DOMContentLoaded', function() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalPriceContainer = document.getElementById('total-price');
+    const promoCodeInput = document.getElementById('promo-code');
+    const applyPromoButton = document.getElementById('apply-promo');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = 0;
+
+    //*
+    /*cart.forEach(item => {
+        const itemElement = document.createElement('tr');
+        itemElement.classList.add('cart-item');
+        itemElement.innerHTML = `
+            <td>
+                <a href="../../produit/${item.id}.html">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <span>${item.name}</span>
+                </a>
+            </td>
+            <td>
+                <select class="item-quantity" onchange="updateQuantity('${item.name}', this.value)">
+                    ${Array.from({ length: 10 }, (_, i) => `<option value="${i + 1}" ${item.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
+                </select>
+            </td>
+            <td>${item.price.toFixed(2)} €</td>
+            <td id="total-${item.name}">${(item.price * item.quantity).toFixed(2)} €</td>
+            <td>
+                <button class="btn-remove" onclick="removeItem('${item.name}')"><img src="../../images/icones/poubelle.png" alt="Supprimer"></button>
+            </td>
+        `;
+        cartItemsContainer.appendChild(itemElement);
+        total += item.price * item.quantity;
+    });**/
+
+    totalPriceContainer.innerHTML = `<h2>Total: ${total.toFixed(2)} €</h2>`;
+
+    applyPromoButton.addEventListener('click', function() {
+        const promoCode = promoCodeInput.value;
+        // Exemple simple d'application d'un code promo
+        if (promoCode === 'PROMO10') {
+            total *= 0.9; // Appliquer 10% de réduction
+            totalPriceContainer.innerHTML = `<h2>Total après réduction: ${total.toFixed(2)} €</h2>`;
+            alert("Code promo appliqué avec succès !");
+        } else {
+            alert("Code promo invalide !");
+        }
+    });
+});
+
+function updateQuantity(name, quantity) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const item = cart.find(item => item.name === name);
+    if (item) {
+        item.quantity = Number(quantity);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        location.reload(); // Recharge la page pour mettre à jour le total
+    }
+}
+
+function removeItem(name) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(item => item.name !== name);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    location.reload();
+}
+    </script>
 </body>
 </html>
