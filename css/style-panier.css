@@ -1,8 +1,9 @@
 @font-face {
-    font-family: 'Gotham';
-    src: url("/font/Gotham-Book.woff2") format("woff2"),
-         url("/font/Gotham-Book.ttf") format("truetype");
+	font-family: 'Gotham';
+	src: url("/font/Gotham-Book.woff2") format("woff2"),
+		url("/font/Gotham-Book.tff") format("truetype")
 }
+
 
 /* Styles généraux pour le body */
 body {
@@ -22,7 +23,17 @@ body {
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
-    position: relative; /* Changement pour le rendre relatif */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Style pour le contenu du bandeau */
+.bandeau-message {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 /* Style pour le header */
@@ -89,10 +100,17 @@ header {
 .header-icon img {
     width: 25px;
     height: 25px;
-    object-fit: cover;
+    object-fit: cover; /* Assure que les images sont bien dimensionnées sans déformation */
 }
 
-/* Styles pour la barre de recherche */
+/* Assurez-vous que les icônes ont un espace suffisant */
+.header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style pour la barre de recherche */
 .search-bar {
     text-align: center;
     margin-top: 10px;
@@ -118,133 +136,149 @@ header {
     background-color: #555;
 }
 
-/* Styles pour le conteneur du panier */
+/* Style pour le fil d'Ariane */
+.breadcrumb {
+    font-family: 'Gotham', sans-serif;
+    font-size: 14px;
+    margin: 10px 20px; /* Espace autour du fil d'Ariane */
+    padding: 10px;
+    background-color: transparent; /* Fond léger */
+    border-radius: 3px;
+    display: inline-block; /* Alignement en ligne */
+    text-transform: uppercase;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #070707;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center; /* Aligne l'icône au centre verticalement */
+    text-transform: uppercase;
+}
+
+.breadcrumb img {
+    width: 16px; /* Largeur de l'icône */
+    height: 16px; /* Hauteur de l'icône */
+    margin-right: 5px; /* Espace entre l'icône et le texte suivant */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+.breadcrumb span {
+    text-decoration: underline;
+    margin-left: 8px;
+}
+
+.category-banner {
+    width: 100%; /* Prend toute la largeur de la page */
+    background: linear-gradient(to right, #F4C430, #5750a9); /* Dégradé de gauche à droite */
+    padding: 5px 0; /* Espacement vertical */
+    text-align: left; /* Alignement à gauche */
+}
+
+
 .cart-container {
-    width: 90%; /* Réduit pour plus de réactivité */
-    max-width: 1200px; /* Limite maximale */
-    margin: 50px auto;
-    background-color: #fff;
+    width: 95%; /* Ajuste la largeur */
+    margin: auto;
+    padding: 20px;
+    background-color: #fff; /* Fond blanc pour le conteneur du panier */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: left;
 }
 
-.cart-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.cart-table th, .cart-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-/* Fixation de la largeur des colonnes */
-.cart-table th {
-    width: 20%; /* Équilibre des largeurs des colonnes */
-}
-
-.cart-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center; /* Centre le contenu */
-}
-
-.cart-table td span {
-    max-width: 200px; /* Limite la largeur du nom du produit */
-    white-space: nowrap; /* Empêche le texte de passer à la ligne */
-    overflow: hidden; /* Cache le texte qui déborde */
-    text-overflow: ellipsis; /* Affiche des points de suspension pour le texte qui déborde */
+.cart-items {
+    display: flex;
+    flex-direction: column; /* Alignement en colonne */
 }
 
 .cart-item {
-    display: flex; /* Utilise flexbox pour aligner le contenu */
-    align-items: center; /* Aligne les éléments verticalement au centre */
+    display: flex;
+    justify-content: space-between; /* Espace entre image et détails */
+    align-items: center;
+    border: 1px solid #ddd; /* Bordure pour chaque article */
+    padding: 10px;
+    margin-bottom: 10px; /* Espacement entre les articles */
+}
+
+.cart-item-image-container {
+    flex-shrink: 0; /* Ne pas réduire l'image */
+}
+
+.cart-item-image {
+    width: 100px; /* Taille de l'image */
+    height: 100px;
+    object-fit: cover; /* Pour garder le ratio de l'image */
+    margin-right: 10px; /* Espacement entre l'image et le texte */
 }
 
 .cart-item-details {
-    display: flex; /* Utilise flexbox pour le conteneur de détails */
-    flex-direction: column; /* Aligne le nom du produit et le prix verticalement */
-    justify-content: center; /* Centre verticalement le contenu */
+    flex-grow: 1; /* Prend l'espace restant */
 }
 
-
-/* Style pour les images de produits */
-.cart-item-image {
-    width: 100px; /* Fixe la largeur de l'image à 100px */
-    height: 100px; /* Fixe la hauteur de l'image à 100px */
-    object-fit: cover; /* Assure que l'image ne déforme pas */
-    margin-right: 10px; /* Ajoute un espacement à droite */
+.cart-item-name,
+.cart-item-price,
+.cart-item-quantity,
+.cart-item-total {
+    margin: 5px 0; /* Espacement entre les lignes de texte */
 }
 
+.btn-remove {
+    background-color: #dc3545; /* Couleur rouge pour le bouton de suppression */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-/* Styles pour le résumé du panier */
+.btn-remove:hover {
+    background-color: #c82333; /* Couleur plus foncée au survol */
+}
+
 .cart-summary {
     margin-top: 20px;
-    text-align: right;
+    text-align: right; /* Aligne le résumé à droite */
 }
 
 .btn-checkout {
-    padding: 10px 20px;
+    background-color: #007bff; /* Couleur bleue pour le bouton de paiement */
+    color: white;
     border: none;
-    background-color: #333;
-    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 .btn-checkout:hover {
-    background-color: #555;
+    background-color: #0056b3; /* Couleur plus foncée au survol */
 }
 
-/* Styles pour le footer */
-.site-footer {
-    background-color: #49583C;
-    color: #FFFFFF;
+footer {
+    background-color: #f8f8f8;
     padding: 20px;
-    margin-top: auto;
+    text-align: center;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
+    margin: auto;
 }
 
-.footer-info, .footer-links, .footer-social {
-    flex: 1;
-    margin: 0 20px;
-}
-
-.footer-info h3, .footer-links h3, .footer-social h3 {
-    margin-top: 0;
-}
-
-.footer-links ul {
+.footer-links {
     list-style: none;
     padding: 0;
 }
 
 .footer-links li {
-    margin: 10px 0;
+    display: inline;
+    margin: 0 10px;
 }
 
 .footer-links a {
-    color: #FFFFFF;
     text-decoration: none;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-.footer-social {
-    display: flex;
-    align-items: center;
-}
-
-.footer-social .social-icon {
-    margin-right: 15px;
+    color: #333;
 }
 
 /* Media Queries pour la réactivité */
@@ -288,6 +322,19 @@ header {
 
     .cart-container {
         width: 95%; /* Ajuste la largeur */
+    }
+
+    .cart-item {
+        flex-direction: column; /* Empile les éléments verticalement sur mobile */
+        align-items: flex-start; /* Aligne le texte à gauche */
+    }
+
+    .cart-item-image {
+        margin-bottom: 10px; /* Espacement en bas de l'image sur mobile */
+    }
+
+    .cart-summary {
+        text-align: center; /* Centre le résumé sur mobile */
     }
 }
 

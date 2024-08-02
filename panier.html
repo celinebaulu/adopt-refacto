@@ -53,20 +53,9 @@
 
     <div class="cart-container">
         <h1>Mon Panier</h1>
-        <table class="cart-table">
-            <thead>
-                <tr>
-                    <th>Produit</th>
-                    <th>Quantité</th>
-                    <th>Prix Unitaire</th>
-                    <th>Prix Total</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items">
-                <!-- Les articles du panier seront insérés ici par JavaScript -->
-            </tbody>
-        </table>
+        <div class="cart-items" id="cart-items">
+            <!-- Les articles du panier seront insérés ici par JavaScript -->
+        </div>
         <div class="cart-summary">
             <p id="total-price">Total : 0.00€</p>
             <button id="proceed-to-checkout" class="btn-checkout">Procéder au paiement</button>
@@ -92,27 +81,19 @@
             let total = 0;
 
             cart.forEach(item => {
-                const itemElement = document.createElement('tr');
+                const itemElement = document.createElement('div');
                 itemElement.classList.add('cart-item');
                 itemElement.innerHTML = `
-                    <td>
-                        <div class="cart-item">
-                            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-                            <div class="cart-item-details">
-                                <span>${item.name}</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <select class="item-quantity" onchange="updateQuantity('${item.name}', this.value)">
-                            ${Array.from({ length: 10 }, (_, i) => `<option value="${i + 1}" ${item.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
-                        </select>
-                    </td>
-                    <td>${item.price.toFixed(2)} €</td>
-                    <td id="total-${item.name}">${(item.price * item.quantity).toFixed(2)} €</td>
-                    <td>
-                        <button class="btn-remove" onclick="removeItem('${item.name}')"><img src="../../images/icones/poubelle.png" alt="Supprimer"></button>
-                    </td>
+                    <div class="cart-item-image-container">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    </div>
+                    <div class="cart-item-details">
+                        <h3 class="cart-item-name">${item.name}</h3>
+                        <p class="cart-item-price">Prix: ${item.price} €</p>
+                        <p class="cart-item-quantity">Quantité: ${item.quantity}</p>
+                        <p class="cart-item-total">Total: ${(item.price * item.quantity).toFixed(2)} €</p>
+                        <button class="btn-remove" onclick="removeItem('${item.name}')">Supprimer</button>
+                    </div>
                 `;
                 cartItemsContainer.appendChild(itemElement);
                 total += item.price * item.quantity;
@@ -131,16 +112,6 @@
         function toggleMenu() {
             const nav = document.querySelector('.main-nav');
             nav.classList.toggle('active');
-        }
-
-        function updateQuantity(name, quantity) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const item = cart.find(item => item.name === name);
-            if (item) {
-                item.quantity = Number(quantity);
-                localStorage.setItem('cart', JSON.stringify(cart));
-                location.reload(); // Recharge la page pour mettre à jour le total
-            }
         }
     </script>
 </body>
