@@ -81,26 +81,47 @@
             let total = 0;
 
             cart.forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.classList.add('cart-item');
-                itemElement.innerHTML = `
-                    <div class="cart-item-image-container">
-                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-                    </div>
-                    <div class="cart-item-details">
-                        <h3 class="cart-item-name">${item.name}</h3>
-                        <p class="cart-item-price">Prix: ${item.price} €</p>
-                        <p class="cart-item-quantity">Quantité: ${item.quantity}</p>
-                        <p class="cart-item-total">Total: ${(item.price * item.quantity).toFixed(2)} €</p>
-                        <button class="btn-remove" onclick="removeItem('${item.name}')">Supprimer</button>
-                    </div>
-                `;
-                cartItemsContainer.appendChild(itemElement);
-                total += item.price * item.quantity;
-            });
+    const itemElement = document.createElement('div');
+    itemElement.classList.add('cart-item');
+    itemElement.innerHTML = `
+        <div class="cart-item-image-container">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+        </div>
+        <div class="cart-item-details">
+            <h3 class="cart-item-name">${item.name}</h3>
+            <div class="cart-item-info">
+                <p class="cart-item-price">Prix: ${item.price} €</p>
+                <div class="cart-item-quantity">
+                    <label for="quantity-${item.name}">Quantité:</label>
+                    <select id="quantity-${item.name}" onchange="updateQuantity('${item.name}', this.value)">
+                        ${Array.from({ length: 10 }, (_, i) => `<option value="${i + 1}" ${item.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
+                    </select>
+                </div>
+                <p class="cart-item-total">Total: ${(item.price * item.quantity).toFixed(2)} €</p>
+                <button class="btn-remove" onclick="removeItem('${item.name}')">
+                    <img src="../../images/icones/poubelle.png" alt="Supprimer" class="remove-icon">
+                </button>
+            </div>
+        </div>
+    `;
+    cartItemsContainer.appendChild(itemElement);
+    total += item.price * item.quantity;
+});
+
 
             totalPriceContainer.innerHTML = `<h2>Total: ${total.toFixed(2)} €</h2>`;
         });
+
+        function updateQuantity(name, quantity) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const item = cart.find(item => item.name === name);
+    if (item) {
+        item.quantity = Number(quantity);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        location.reload(); // Recharge la page pour mettre à jour le total
+    }
+}
+
 
         function removeItem(name) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
