@@ -1,9 +1,8 @@
 @font-face {
-	font-family: 'Gotham';
-	src: url("/font/Gotham-Book.woff2") format("woff2"),
-		url("/font/Gotham-Book.tff") format("truetype")
+    font-family: 'Gotham';
+    src: url("/font/Gotham-Book.woff2") format("woff2"),
+         url("/font/Gotham-Book.ttf") format("truetype");
 }
-
 
 /* Styles généraux pour le body */
 body {
@@ -23,17 +22,7 @@ body {
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-/* Style pour le contenu du bandeau */
-.bandeau-message {
-    display: inline-block;
-    white-space: nowrap;
+    position: relative; /* Changement pour le rendre relatif */
 }
 
 /* Style pour le header */
@@ -103,14 +92,7 @@ header {
     object-fit: cover;
 }
 
-/* Assurez-vous que les icônes ont un espace suffisant */
-.header-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Style pour la barre de recherche */
+/* Styles pour la barre de recherche */
 .search-bar {
     text-align: center;
     margin-top: 10px;
@@ -138,13 +120,14 @@ header {
 
 /* Styles pour le conteneur du panier */
 .cart-container {
-    width: 80%;
+    width: 90%; /* Réduit pour plus de réactivité */
+    max-width: 1200px; /* Limite maximale */
     margin: 50px auto;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    text-align: left; /* Alignement à gauche */
+    text-align: left;
 }
 
 .cart-table {
@@ -155,40 +138,65 @@ header {
 .cart-table th, .cart-table td {
     padding: 10px;
     border: 1px solid #ddd;
-    text-align: left;
 }
 
+/* Fixation de la largeur des colonnes */
 .cart-table th {
-    background-color: #f4f4f4;
+    width: 20%; /* Équilibre des largeurs des colonnes */
 }
 
-/* Styles pour le champ de code promo */
-.promo-code-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-#promo-code {
-    flex-grow: 1;
+.cart-table td {
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    text-align: center; /* Centre le contenu */
 }
 
-.btn-apply-promo {
-    background-color: #333;
-    color: #fff;
+.cart-table td span {
+    max-width: 200px; /* Limite la largeur du nom du produit */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    overflow: hidden; /* Cache le texte qui déborde */
+    text-overflow: ellipsis; /* Affiche des points de suspension pour le texte qui déborde */
+}
+
+.cart-item {
+    display: flex; /* Utilise flexbox pour aligner le contenu */
+    align-items: center; /* Aligne les éléments verticalement au centre */
+}
+
+.cart-item-details {
+    display: flex; /* Utilise flexbox pour le conteneur de détails */
+    flex-direction: column; /* Aligne le nom du produit et le prix verticalement */
+    justify-content: center; /* Centre verticalement le contenu */
+}
+
+
+/* Style pour les images de produits */
+.cart-item-image {
+    width: 100px; /* Fixe la largeur de l'image à 100px */
+    height: 100px; /* Fixe la hauteur de l'image à 100px */
+    object-fit: cover; /* Assure que l'image ne déforme pas */
+    margin-right: 10px; /* Ajoute un espacement à droite */
+}
+
+
+/* Styles pour le résumé du panier */
+.cart-summary {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.btn-checkout {
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-.btn-apply-promo:hover {
+.btn-checkout:hover {
     background-color: #555;
 }
-
 
 /* Styles pour le footer */
 .site-footer {
@@ -278,47 +286,9 @@ header {
         box-sizing: border-box;
     }
 
-    .search-bar input[type="text"] {
-        width: calc(100% - 120px); /* Ajuster la largeur de l'input */
+    .cart-container {
+        width: 95%; /* Ajuste la largeur */
     }
-
-    .product-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-images {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .small-images {
-        display: flex;
-        flex-direction: column; /* Assure que les images sont en colonne */
-        gap: 10px;
-        justify-content: flex-end; /* Alignement au bas de la main-image */
-        align-items: center;
-    }
-
-    .small-image {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        cursor: pointer;
-    }
-
-    .main-image-container {
-        width: 100%;
-        height: auto;
-    }
-
-    .product-details {
-        text-align: left;
-        width: 90%;
-        align-self: center; /* Centrer les détails sur les petits écrans */
-        margin: auto;
-        
-}
 }
 
 @media (min-width: 611px) {
@@ -335,39 +305,7 @@ header {
         display: block;
     }
 
-    .product-container {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    .product-images {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .small-images {
-        flex-direction: column; /* Assure que les images sont en colonne */
-        gap: 10px;
-        justify-content: flex-end; /* Alignement au bas de la main-image */
-        align-items: center;
-        margin-top: auto;
-    }
-
-    .small-image {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        cursor: pointer;
-    }
-
-    .main-image-container {
-        width: 400px;
-        height: 400px;
-    }
-
-    .product-details {
-        text-align: left;
-        margin-left: 10px; /* Adds space between images and details */
-        align-self: center; /* Centre les détails verticalement */
+    .cart-container {
+        width: 80%; /* Ajustement pour écrans plus larges */
     }
 }

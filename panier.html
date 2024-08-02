@@ -85,7 +85,6 @@
     </footer>
 
     <script>
-
         document.addEventListener('DOMContentLoaded', function() {
             const cartItemsContainer = document.getElementById('cart-items');
             const totalPriceContainer = document.getElementById('total-price');
@@ -93,17 +92,27 @@
             let total = 0;
 
             cart.forEach(item => {
-                const itemElement = document.createElement('div');
+                const itemElement = document.createElement('tr');
                 itemElement.classList.add('cart-item');
                 itemElement.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-                    <div class="cart-item-details">
-                        <h3>${item.name}</h3>
-                        <p>Prix: ${item.price} €</p>
-                        <p>Quantité: ${item.quantity}</p>
-                        <p>Total: ${(item.price * item.quantity).toFixed(2)} €</p>
-                        <button class="btn-remove" onclick="removeItem('${item.name}')">Supprimer</button>
-                    </div>
+                    <td>
+                        <div class="cart-item">
+                            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                            <div class="cart-item-details">
+                                <span>${item.name}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="item-quantity" onchange="updateQuantity('${item.name}', this.value)">
+                            ${Array.from({ length: 10 }, (_, i) => `<option value="${i + 1}" ${item.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
+                        </select>
+                    </td>
+                    <td>${item.price.toFixed(2)} €</td>
+                    <td id="total-${item.name}">${(item.price * item.quantity).toFixed(2)} €</td>
+                    <td>
+                        <button class="btn-remove" onclick="removeItem('${item.name}')"><img src="../../images/icones/poubelle.png" alt="Supprimer"></button>
+                    </td>
                 `;
                 cartItemsContainer.appendChild(itemElement);
                 total += item.price * item.quantity;
@@ -124,71 +133,15 @@
             nav.classList.toggle('active');
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    const totalPriceContainer = document.getElementById('total-price');
-    const promoCodeInput = document.getElementById('promo-code');
-    const applyPromoButton = document.getElementById('apply-promo');
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let total = 0;
-
-    //*
-    /*cart.forEach(item => {
-        const itemElement = document.createElement('tr');
-        itemElement.classList.add('cart-item');
-        itemElement.innerHTML = `
-            <td>
-                <a href="../../produit/${item.id}.html">
-                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-                    <span>${item.name}</span>
-                </a>
-            </td>
-            <td>
-                <select class="item-quantity" onchange="updateQuantity('${item.name}', this.value)">
-                    ${Array.from({ length: 10 }, (_, i) => `<option value="${i + 1}" ${item.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
-                </select>
-            </td>
-            <td>${item.price.toFixed(2)} €</td>
-            <td id="total-${item.name}">${(item.price * item.quantity).toFixed(2)} €</td>
-            <td>
-                <button class="btn-remove" onclick="removeItem('${item.name}')"><img src="../../images/icones/poubelle.png" alt="Supprimer"></button>
-            </td>
-        `;
-        cartItemsContainer.appendChild(itemElement);
-        total += item.price * item.quantity;
-    });**/
-
-    totalPriceContainer.innerHTML = `<h2>Total: ${total.toFixed(2)} €</h2>`;
-
-    applyPromoButton.addEventListener('click', function() {
-        const promoCode = promoCodeInput.value;
-        // Exemple simple d'application d'un code promo
-        if (promoCode === 'PROMO10') {
-            total *= 0.9; // Appliquer 10% de réduction
-            totalPriceContainer.innerHTML = `<h2>Total après réduction: ${total.toFixed(2)} €</h2>`;
-            alert("Code promo appliqué avec succès !");
-        } else {
-            alert("Code promo invalide !");
+        function updateQuantity(name, quantity) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const item = cart.find(item => item.name === name);
+            if (item) {
+                item.quantity = Number(quantity);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                location.reload(); // Recharge la page pour mettre à jour le total
+            }
         }
-    });
-});
-
-function updateQuantity(name, quantity) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const item = cart.find(item => item.name === name);
-    if (item) {
-        item.quantity = Number(quantity);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        location.reload(); // Recharge la page pour mettre à jour le total
-    }
-}
-
-function removeItem(name) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = cart.filter(item => item.name !== name);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    location.reload();
-}
     </script>
 </body>
 </html>
