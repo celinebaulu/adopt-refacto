@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'Gotham';
+	src: url("/font/Gotham-Book.woff2") format("woff2"),
+		url("/font/Gotham-Book.tff") format("truetype")
+}
+
+
 /* Styles généraux pour le body */
 body {
     margin: 0;
