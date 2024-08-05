@@ -1,7 +1,9 @@
 @font-face {
 	font-family: 'Gotham';
 	src: url("/font/Gotham-Book.woff2") format("woff2"),
-		url("/font/Gotham-Book.tff") format("truetype")
+		url("/font/Gotham-Book.tff") format("truetype");
+    font-family: 'DM Serif Display';
+        src: url("/font/FinSerifDisplay-Bold.ttf") format("truetype"),
 }
 
 
@@ -403,6 +405,7 @@ header {
 
 .related-products-container h2 {
     margin-bottom: 20px;
+    font-family: 'DM Serif Display', serif;
 }
 
 .related-products {
@@ -436,7 +439,11 @@ header {
 }
 
 .title-reviews {
-    padding: 20px;
+    font-size: 25px;
+    font-family: "DM Serif Display", serif;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
 }
 
 .customer-reviews {

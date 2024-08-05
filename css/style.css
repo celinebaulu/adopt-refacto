@@ -1,7 +1,9 @@
 @font-face {
 	font-family: 'Gotham';
 	src: url("/font/Gotham-Book.woff2") format("woff2"),
-		url("/font/Gotham-Book.tff") format("truetype")
+		url("/font/Gotham-Book.tff") format("truetype");
+    font-family: 'DM Serif Display';
+        src: url("/font/FinSerifDisplay-Bold.ttf") format("truetype"),
 }
 
 
@@ -302,7 +304,7 @@ header {
 }
 
 .customer-reviews h2 {
-    font-size: 35px;
+    font-size: 30px;
     font-family: "DM Serif Display", serif;
     margin-bottom: 20px;
     color: #333;

@@ -1,9 +1,10 @@
 @font-face {
 	font-family: 'Gotham';
 	src: url("/font/Gotham-Book.woff2") format("woff2"),
-		url("/font/Gotham-Book.tff") format("truetype")
+		url("/font/Gotham-Book.tff") format("truetype");
+    font-family: 'DM Serif Display';
+        src: url("/font/FinSerifDisplay-Bold.ttf") format("truetype"),
 }
-
 
 /* Styles généraux pour le body */
 body {
